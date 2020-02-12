@@ -3,6 +3,9 @@
 	"version": "0.0.2-rc",
 	"main": "dist/index.js",
 	"source": "src/index.js",
+	"files": [
+		"dist/*"
+	],
 	"license": "MIT",
 	"scripts": {
 		"start": "microbundle watch --target node --jsx React.createElement",
