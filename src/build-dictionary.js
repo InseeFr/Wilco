@@ -1,5 +1,3 @@
-import 'moment/locale/en-gb';
-import 'moment/locale/fr';
 import { createDictionary, firstLang, secondLang, getLang } from './i18n';
 import ErrorsD from './errors';
 const dictionary = {
