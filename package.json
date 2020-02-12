@@ -80,7 +80,6 @@
 	},
 	"dependencies": {
 		"lodash": "^4.17.15",
-		"moment": "2.23.0",
 		"query-string": "^6.9.0",
 		"react-bootstrap": "0.31.5",
 		"react-bootstrap-table-next": "3.3.3",

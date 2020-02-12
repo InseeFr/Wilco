@@ -1,6 +1,6 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure } from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './styles.css';
+import '../src/index.scss';
 
 const requireAll = requireContext => requireContext.keys().map(requireContext);
 

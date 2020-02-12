@@ -1,6 +1,3 @@
-import 'moment/locale/en-gb';
-import 'moment/locale/fr';
-
 /**
  * Based on the locale passed as a paremeter, this function will return
  * the corresponding dictionary.
