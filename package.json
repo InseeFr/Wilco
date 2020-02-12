@@ -1,6 +1,6 @@
 {
 	"name": "@inseefr/wilco",
-	"version": "0.0.2-rc",
+	"version": "0.0.2-rc2",
 	"main": "dist/index.js",
 	"source": "src/index.js",
 	"files": [
