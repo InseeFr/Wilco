@@ -1,5 +1,4 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router';
 import { storiesOf } from '@storybook/react';
 import Picker from '.';
 
@@ -12,11 +11,6 @@ const styleDecorator = storyFn => (
 	<div className="col-md-10 col-md-offset-1">{storyFn()}</div>
 );
 stories.addDecorator(styleDecorator);
-
-const storeDecorator = story => (
-	<MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
-);
-stories.addDecorator(storeDecorator);
 
 const items = Array(99)
 	.fill()
