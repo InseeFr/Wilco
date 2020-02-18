@@ -1,6 +1,6 @@
 {
 	"name": "@inseefr/wilco",
-	"version": "0.0.2-rc3",
+	"version": "0.0.2-rc4",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/InseeFr/wilco"
@@ -33,12 +33,12 @@
 		"@babel/plugin-transform-modules-commonjs": "^7.8.3",
 		"@babel/plugin-transform-react-jsx": "^7.3.0",
 		"@babel/preset-env": "^7.5.5",
+		"@babel/preset-react": "^7.8.3",
 		"@storybook/addon-actions": "5.3.13",
 		"@storybook/addon-knobs": "5.3.13",
 		"@storybook/addon-links": "5.3.13",
 		"@storybook/addons": "5.3.13",
 		"@storybook/react": "5.3.13",
-		"@babel/preset-react": "^7.8.3",
 		"babel-eslint": "^10.0.3",
 		"babel-loader": "8.0.6",
 		"bootstrap": "^3.4.1",
