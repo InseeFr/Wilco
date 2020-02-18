@@ -28,17 +28,15 @@ export default ({ paths }) => {
 	const orderedPaths = paths
 		.filter(path => path.shouldBeDisplayed !== false)
 		.sort((p1, p2) => p1.order - p2.order);
+	const allPaths = [{ label: D.home, path: '/' }, ...orderedPaths];
 	return (
 		<header>
 			<nav className="navbar navbar-primary">
 				<div className="container-fluid">
 					<div className="collapse navbar-collapse">
 						<ul className="nav navbar-nav">
-							<li className="navbar-left with-separator">
-								<Link to="/">{D.home}</Link>
-							</li>
-							{orderedPaths.map((path, index) => {
-								const classes = getClasses(path, index, orderedPaths)
+							{allPaths.map((path, index) => {
+								const classes = getClasses(path, index, allPaths)
 									.join(' ')
 									.trim();
 								return (
