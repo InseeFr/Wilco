@@ -1,3 +1,5 @@
+import './index.scss';
+
 export * from './i18n';
 export { default as BackToTop } from './back-to-top';
 export { I18NContext } from './context';
