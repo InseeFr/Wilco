@@ -32,8 +32,8 @@ export { default as Panel } from './panel';
 export { default as PickerItem } from './picker-item';
 export { default as Picker } from './picker';
 
-export { default as SearchRmes } from './search-rmes';
-export { default as TableRmes } from './table-rmes';
+export { default as SearchableList } from './search';
+export { default as Table } from './table';
 
 export { default as CheckSecondLang } from './second-lang-checkbox';
 export { default as PageTitle } from './page-title';

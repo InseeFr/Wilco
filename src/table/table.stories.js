@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import TableRmes from './';
-import './table-rmes.scss';
+import Table from '.';
+import './table.scss';
 
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
@@ -24,16 +24,16 @@ const data = Array(20)
 	.fill()
 	.map((a, i) => ({ col1: `data ${i + 1} - 1`, col2: `data ${i + 1} - 2` }));
 
-const stories = storiesOf('Table-Rmes', module);
+const stories = storiesOf('Table', module);
 stories.addDecorator(withKnobs);
 
 const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
 stories.addDecorator(styleDecorator);
 
-stories.add('Default', () => <TableRmes rowParams={rows} data={data} />);
+stories.add('Default', () => <Table rowParams={rows} data={data} />);
 
 stories.add('With all props', () => (
-	<TableRmes
+	<Table
 		rowParams={rows}
 		data={data}
 		search={boolean('Searchable', 'true')}

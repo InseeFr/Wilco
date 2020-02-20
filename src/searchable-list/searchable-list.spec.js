@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Search from '.';
+import SearchableList from '.';
 
 const items = Array.apply(null, Array(50)).map((a, i) => ({
 	id: `${i + 1}`,
 	label: `Item ${i + 1}`,
 }));
 
-describe('search', () => {
+describe('SearchableList', () => {
 	it('renders without crashing', () => {
-		shallow(<Search items={items} childPath="concept" />);
+		shallow(<SearchableList items={items} childPath="concept" />);
 	});
 });

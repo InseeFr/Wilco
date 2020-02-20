@@ -7,11 +7,11 @@ import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 
 import paginationFactory from 'react-bootstrap-table2-paginator';
 
-import './table-rmes.scss';
+import './table.scss';
 import D from '../build-dictionary';
 const { SearchBar } = Search;
 
-function TableRmes({
+const Table = ({
 	rowParams,
 	data,
 	search,
@@ -19,7 +19,7 @@ function TableRmes({
 	cssClass,
 	onRowClick,
 	align = 'center',
-}) {
+}) => {
 	const plugins = {};
 	if (pagination) {
 		plugins.pagination = paginationFactory({
@@ -86,6 +86,6 @@ function TableRmes({
 			</div>
 		</Fragment>
 	);
-}
+};
 
-export default TableRmes;
+export default Table;

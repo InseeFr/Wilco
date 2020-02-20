@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Table from './';
+import Table from '.';
 
 const rowParams = [{ dataField: 'total', text: 'Total', width: '100%' }];
 

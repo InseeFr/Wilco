@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import Pagination from '../pagination';
 import { filterKeyDeburr, nbResults } from '../utils/array-utils';
 import D from '../build-dictionary';
-function SearchRmes({
+
+const SearchableList = ({
 	items = [],
 	advancedSearch = false,
 	searchUrl,
@@ -14,7 +15,7 @@ function SearchRmes({
 	colOff,
 	label,
 	autoFocus,
-}) {
+}) => {
 	const [search, handleSearch] = useState('');
 
 	const filter = filterKeyDeburr(
@@ -66,14 +67,14 @@ function SearchRmes({
 			<Pagination itemEls={hitEls} itemsPerPage="10" />
 		</div>
 	);
-}
+};
 
-SearchRmes.defaultProps = {
+SearchableList.defaultProps = {
 	label: 'label',
 	autoFocus: false,
 };
 
-SearchRmes.propTypes = {
+SearchableList.propTypes = {
 	items: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 	childPath: PropTypes.string.isRequired,
 	advancedSearch: PropTypes.bool,
@@ -85,4 +86,4 @@ SearchRmes.propTypes = {
 	autoFocus: PropTypes.bool,
 };
 
-export default SearchRmes;
+export default SearchableList;
