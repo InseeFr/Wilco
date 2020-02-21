@@ -9,6 +9,7 @@ describe('picker-page', () => {
 		shallow(
 			<PagePicker
 				items={items}
+				onChange={jest.fn()}
 				title="title"
 				panelTitle="panelTitle"
 				labelWarning="labelWarning"
