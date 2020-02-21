@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AddLogo from '../logo/logo-add';
 import DelLogo from '../logo/logo-del';
@@ -8,14 +8,20 @@ import Pagination from '../pagination';
 import { filterDeburr } from '../utils/array-utils';
 import D from '../build-dictionary';
 
-const Picker = ({ items, onChange, panelTitle }) => {
+const Picker = ({ items: propsItems, onChange, panelTitle }) => {
 	const [searchLabel, setSearchLabel] = useState('');
+	const [items, setItems] = useState(() => propsItems);
+
+	useEffect(() => {
+		setItems(propsItems);
+	}, [propsItems]);
 
 	const moveItem = id => {
 		const newItems = items.reduce((acc, item) => {
 			const { id: itemId, isAdded } = item;
 			return [...acc, { ...item, isAdded: itemId === id ? !isAdded : isAdded }];
 		}, []);
+		setItems(newItems);
 		onChange(newItems);
 	};
 
