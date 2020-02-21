@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 import Picker from '.';
@@ -16,14 +16,18 @@ const styleDecorator = storyFn => (
 );
 stories.addDecorator(styleDecorator);
 
-const items = Array(99)
+const initItems = Array(99)
 	.fill()
 	.map((a, i) => ({ id: `${i}`, label: `Item ${i + 1}` }));
 
-stories.add('Default', () => (
-	<Picker
-		items={items}
-		panelTitle={text('Panel title', 'Panel title')}
-		context="concepts"
-	/>
-));
+stories.add('Default', () => {
+	const [items, setItems] = useState(initItems);
+	return (
+		<Picker
+			items={items}
+			panelTitle={text('Panel title', 'Panel title')}
+			onChange={setItems}
+			context="concepts"
+		/>
+	);
+});
