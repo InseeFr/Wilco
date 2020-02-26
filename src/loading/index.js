@@ -10,7 +10,7 @@ const Loading = ({ textType }) => {
 	const D = useContext(I18NContext);
 	const text = getText(textType, D);
 	return (
-		<div className="bauhaus-loading container">
+		<div className="bauhaus-loading">
 			<ReactLoading
 				className="bauhaus-loader"
 				type="spinningBubbles"
