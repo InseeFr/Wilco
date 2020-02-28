@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Pagination } from './';
-import { Link } from '../Button';
+import { Link } from '../button';
 
 const items = Array.apply(null, Array(50)).map((a, i) => (
 	<span key={i}>`Item ${i + 1}`</span>
