@@ -5,15 +5,12 @@ import React from 'react';
 import './button.scss';
 
 const Link = ({ to, disabled, children }) => {
+	const classes = 'btn bauhaus-btn btn-lg col-md-12';
 	if (disabled) {
-		return (
-			<span className="btn bauhaus-btn btn-lg col-md-12 disabled">
-				{children}
-			</span>
-		);
+		return <span className={classes + ' disabled'}>{children}</span>;
 	}
 	return (
-		<ReactLink className={`btn bauhaus-btn btn-lg col-md-12`} to={to}>
+		<ReactLink className={classes} to={to}>
 			{children}
 		</ReactLink>
 	);
