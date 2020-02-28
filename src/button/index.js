@@ -1,8 +1,23 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link as ReactLink } from 'react-router-dom';
 import React from 'react';
 
 import './button.scss';
+
+const Link = ({ to, disabled, children }) => {
+	if (disabled) {
+		return (
+			<span className="btn bauhaus-btn btn-lg col-md-12 disabled">
+				{children}
+			</span>
+		);
+	}
+	return (
+		<ReactLink className={`btn bauhaus-btn btn-lg col-md-12`} to={to}>
+			{children}
+		</ReactLink>
+	);
+};
 
 const Button = ({
 	action,
@@ -17,11 +32,7 @@ const Button = ({
 	let button;
 	if (typeof action === 'string') {
 		button = (
-			<Link
-				className={`btn bauhaus-btn btn-lg col-md-12`}
-				to={action}
-				disabled={disabled}
-			>
+			<Link to={action} disabled={disabled}>
 				{content}
 			</Link>
 		);
