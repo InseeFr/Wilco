@@ -6,9 +6,9 @@ import { I18NContext } from '../context';
 
 import './loading.scss';
 
-const Loading = ({ textType }) => {
+const Loading = ({ textType, text }) => {
 	const D = useContext(I18NContext);
-	const text = getText(textType, D);
+	const content = text || getText(textType, D);
 	return (
 		<div className="bauhaus-loading">
 			<ReactLoading
@@ -18,7 +18,7 @@ const Loading = ({ textType }) => {
 				height="100%"
 				width="100%"
 			/>
-			<h3 className="bauhaus-loading-text">{text}</h3>
+			<h3 className="bauhaus-loading-text">{content}</h3>
 		</div>
 	);
 };
@@ -27,4 +27,5 @@ export default Loading;
 
 Loading.propTypes = {
 	textType: PropTypes.string,
+	text: PropTypes.string,
 };
