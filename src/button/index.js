@@ -17,7 +17,11 @@ const Button = ({
 	let button;
 	if (typeof action === 'string') {
 		button = (
-			<Link className={`btn bauhaus-btn btn-lg col-md-12`} to={action}>
+			<Link
+				className={`btn bauhaus-btn btn-lg col-md-12`}
+				to={action}
+				disabled={disabled}
+			>
 				{content}
 			</Link>
 		);
