@@ -1,21 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import Button from './';
-
+import { MemoryRouter } from 'react-router-dom';
 describe('button', () => {
 	it('renders without crashing', () => {
 		shallow(<Button action="" label="" />);
 	});
 
 	it('contains well-formed Link tag', () => {
-		const wrapper = shallow(<Button action="/home" label="myButton" />);
-		const link = (
-			<Link className="btn bauhaus-btn btn-lg col-md-12" to="/home">
-				myButton
-			</Link>
+		const wrapper = shallow(
+			<MemoryRouter>
+				<Button action="/home" label="myButton" />
+			</MemoryRouter>
 		);
-		expect(wrapper.contains(link)).toEqual(true);
+
+		expect(wrapper.html()).toEqual(
+			expect.stringContaining(
+				'<a class="btn bauhaus-btn btn-lg col-md-12" href="/home">myButton</a>'
+			)
+		);
 	});
 
 	it('contains well-formed button tag', () => {
@@ -31,26 +34,23 @@ describe('button', () => {
 
 	it('should contain a col-md-offset CSS class if the offset prop is defined', () => {
 		const wrapper = shallow(
-			<Button action="/home" label="myButton" offset={2} />
+			<MemoryRouter>
+				<Button action="/home" label="myButton" offset={2} />
+			</MemoryRouter>
 		);
-		const link = (
-			<div className="col-md-2 col-md-offset-2">
-				<Link className="btn bauhaus-btn btn-lg col-md-12" to="/home">
-					myButton
-				</Link>
-			</div>
+
+		expect(wrapper.html()).toEqual(
+			expect.stringContaining('<div class="col-md-2 col-md-offset-2">')
 		);
-		expect(wrapper.contains(link)).toEqual(true);
 	});
 	it('should not contain a col-md-offset CSS class if the offset prop is undefined', () => {
-		const wrapper = shallow(<Button action="/home" label="myButton" />);
-		const link = (
-			<div className="col-md-2">
-				<Link className="btn bauhaus-btn btn-lg col-md-12" to="/home">
-					myButton
-				</Link>
-			</div>
+		const wrapper = shallow(
+			<MemoryRouter>
+				<Button action="/home" label="myButton" />
+			</MemoryRouter>
 		);
-		expect(wrapper.contains(link)).toEqual(true);
+		expect(wrapper.html()).toEqual(
+			expect.stringContaining('<div class="col-md-2">')
+		);
 	});
 });

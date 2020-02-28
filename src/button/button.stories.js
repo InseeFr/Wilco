@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import { MemoryRouter } from 'react-router-dom';
 import Button from './';
 
 const stories = storiesOf('Button', module);
@@ -19,4 +19,18 @@ stories.add('Disabled', () => (
 
 stories.add('Using children', () => (
 	<Button action={() => console.log('Click')}>Click me</Button>
+));
+
+stories.add('Link', () => (
+	<MemoryRouter>
+		<Button action="#">Click me</Button>
+	</MemoryRouter>
+));
+
+stories.add('Disabled Link', () => (
+	<MemoryRouter>
+		<Button action="#" disabled>
+			Click me
+		</Button>
+	</MemoryRouter>
 ));

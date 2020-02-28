@@ -23,3 +23,4 @@ const styleDecorator = storyFn => (
 stories.addDecorator(styleDecorator);
 
 stories.add('Default', () => <Loading />);
+stories.add('With text', () => <Loading text="Saving" />);
