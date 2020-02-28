@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { Link } from '../button';
 import queryString from 'query-string';
 import './pagination.scss';
 import D from '../build-dictionary';
@@ -61,7 +62,7 @@ export const Pagination = React.memo(
 				{pageNumbers.length > 1 && (
 					<div>
 						<ul className={`bauhaus-pagination`}>
-							<li className={isDisabled(currentPage - 1) ? 'disabled' : ''}>
+							<li>
 								<Link
 									to={`${pathname}?page=1`}
 									aria-label={ariaLabel(1)}
@@ -71,7 +72,7 @@ export const Pagination = React.memo(
 									<span className="sr-only">First</span>
 								</Link>
 							</li>
-							<li className={isDisabled(currentPage - 1) ? 'disabled' : ''}>
+							<li>
 								<Link
 									to={`${pathname}?page=${currentPage - 1}`}
 									aria-label={ariaLabel(currentPage - 1)}
@@ -82,7 +83,7 @@ export const Pagination = React.memo(
 								</Link>
 							</li>
 							{renderPageNumbers}
-							<li className={isDisabled(currentPage + 1) ? 'disabled' : ''}>
+							<li>
 								<Link
 									to={`${pathname}?page=${currentPage + 1}`}
 									aria-label={ariaLabel(currentPage + 1)}
@@ -92,7 +93,7 @@ export const Pagination = React.memo(
 									<span className="sr-only">Next</span>
 								</Link>
 							</li>
-							<li className={isDisabled(currentPage + 1) ? 'disabled' : ''}>
+							<li>
 								<Link
 									aria-label={ariaLabel(pageNumbers[pageNumbers.length - 1])}
 									to={`${pathname}?page=${pageNumbers[pageNumbers.length - 1]}`}

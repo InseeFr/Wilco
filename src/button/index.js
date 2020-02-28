@@ -4,13 +4,12 @@ import React from 'react';
 
 import './button.scss';
 
-const Link = ({ to, disabled, children }) => {
-	const classes = 'btn bauhaus-btn btn-lg col-md-12';
+export const Link = ({ to, disabled, children, className, ...rest }) => {
 	if (disabled) {
-		return <span className={classes + ' disabled'}>{children}</span>;
+		return <span className={className + ' disabled'}>{children}</span>;
 	}
 	return (
-		<ReactLink className={classes} to={to}>
+		<ReactLink className={className} to={to} {...rest}>
 			{children}
 		</ReactLink>
 	);
@@ -29,7 +28,11 @@ const Button = ({
 	let button;
 	if (typeof action === 'string') {
 		button = (
-			<Link to={action} disabled={disabled}>
+			<Link
+				className="btn bauhaus-btn btn-lg col-md-12"
+				to={action}
+				disabled={disabled}
+			>
 				{content}
 			</Link>
 		);
@@ -37,7 +40,7 @@ const Button = ({
 		//if action is a function, it means a handler was passed in instead of an URL
 		button = (
 			<button
-				className={`btn bauhaus-btn btn-lg col-md-12`}
+				className="btn bauhaus-btn btn-lg col-md-12"
 				onClick={action}
 				disabled={disabled}
 			>

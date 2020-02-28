@@ -10,10 +10,11 @@ stories.addDecorator(withKnobs);
 const routerDecorator = storyFn => <MemoryRouter>{storyFn()}</MemoryRouter>;
 stories.addDecorator(routerDecorator);
 
-export const items = [
-	{ id: '1', label: 'First item' },
-	{ id: '2', label: 'Second item' },
-];
+export const items = [];
+
+for (let i = 0; i < 100; i++) {
+	items.push({ id: i, label: `Item ${i}` });
+}
 
 const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
 stories.addDecorator(styleDecorator);
