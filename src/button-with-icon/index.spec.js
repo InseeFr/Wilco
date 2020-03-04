@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import AbstractButton, {
 	ExportButton,
 	PublishButton,
@@ -8,55 +8,68 @@ import AbstractButton, {
 	SaveButton,
 	DuplicateButton,
 } from './';
-import Button from '../button';
 
 describe('AbstractButton', () => {
 	it('should call Button', () => {
-		const wrapper = shallow(<AbstractButton label="" action="" />);
-		expect(wrapper.find(Button).length).toBe(1);
+		const { container } = render(<AbstractButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
 	});
 });
 describe('ExportButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<ExportButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe('export');
+	it('should display the right icon', () => {
+		const { container } = render(<ExportButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain(
+			'export'
+		);
 	});
 });
 describe('PublishButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<PublishButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe('ok');
+	it('should display the right icon', () => {
+		const { container } = render(<PublishButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain('ok');
 	});
 });
 describe('NewButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<NewButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe('plus');
+	it('should display the right icon', () => {
+		const { container } = render(<NewButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain('plus');
 	});
 });
 describe('CancelButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<CancelButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe(
+	it('should display the right icon', () => {
+		const { container } = render(<CancelButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain(
 			'floppy-remove'
 		);
 	});
 });
 describe('SaveButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<SaveButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe('floppy-disk');
+	it('should display the right icon', () => {
+		const { container } = render(<SaveButton label="" action={() => {}} />);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain(
+			'floppy-disk'
+		);
 	});
 });
 describe('DuplicateButton', () => {
-	it('should call AbstractButton', () => {
-		const wrapper = shallow(<DuplicateButton label="" action="" />);
-		expect(wrapper.find(AbstractButton).length).toBe(1);
-		expect(wrapper.find(AbstractButton).get(0).props.icon).toBe('duplicate');
+	it('should display the right icon', () => {
+		const { container } = render(
+			<DuplicateButton label="" action={() => {}} />
+		);
+		expect(container.querySelectorAll('button')).toHaveLength(1);
+
+		expect(container.querySelector('button span').className).toContain(
+			'duplicate'
+		);
 	});
 });

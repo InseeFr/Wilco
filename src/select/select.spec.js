@@ -1,7 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Select from './select';
-import { HelpBlock } from 'react-bootstrap';
 
 const options = Array.apply(null, Array(5)).map((a, i) => ({
 	value: `${i + 1}`,
@@ -10,7 +9,7 @@ const options = Array.apply(null, Array(5)).map((a, i) => ({
 
 describe('select', () => {
 	it('renders without crashing', () => {
-		shallow(
+		render(
 			<Select
 				value="value"
 				placeholder="..."
@@ -20,7 +19,7 @@ describe('select', () => {
 		);
 	});
 	it('should display a HelpBlock if the helpMsg is defined', () => {
-		const container = shallow(
+		const { container } = render(
 			<Select
 				value="value"
 				placeholder="..."
@@ -29,10 +28,10 @@ describe('select', () => {
 				helpMsg="helpMsg"
 			/>
 		);
-		expect(container.find(HelpBlock).length).toBe(1);
+		expect(container.querySelectorAll('.help-block')).toHaveLength(1);
 	});
 	it('should not display a HelpBlock if the helpMsg is undefined', () => {
-		const container = shallow(
+		const { container } = render(
 			<Select
 				value="value"
 				placeholder="..."
@@ -40,6 +39,6 @@ describe('select', () => {
 				onChange={() => ''}
 			/>
 		);
-		expect(container.find(HelpBlock).length).toBe(0);
+		expect(container.querySelectorAll('.help-block')).toHaveLength(0);
 	});
 });

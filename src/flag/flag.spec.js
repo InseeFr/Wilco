@@ -1,15 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import Flag from './';
 
 describe('flag', () => {
 	it('should return null if the flag is not defined', () => {
-		const container = shallow(<Flag flag={null} />);
-		expect(container.html()).toBe(null);
+		const { container } = render(<Flag flag={null} />);
+		expect(container.innerHTML).toBe('');
 	});
 	it('should return an image if the flag is defined', () => {
-		const container = shallow(<Flag flag="fr" />);
-		expect(container.find('img').props().src).toBe('fr');
-		expect(container.find('img').props().alt).toBe('flag');
+		const { container } = render(<Flag flag="fr" />);
+
+		const img = container.querySelector('img');
+		expect(img.src).toBe('http://localhost/fr');
+		expect(img.alt).toBe('flag');
 	});
 });

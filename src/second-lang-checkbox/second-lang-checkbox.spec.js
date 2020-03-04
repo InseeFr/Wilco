@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import CheckSecondLang from './';
 
 describe('second-lang-checkbox', () => {
 	it('renders without crashing', () => {
-		shallow(
+		render(
 			<CheckSecondLang
 				secondLang={true}
 				onChange={() => console.log('check')}
