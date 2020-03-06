@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import ErrorBloc from './';
 
 jest.mock('../build-dictionary', () => ({
@@ -11,34 +11,34 @@ jest.mock('../build-dictionary', () => ({
 describe('error-bloc', () => {
 	it('renders without crashing', () => {
 		const Component = () => <ErrorBloc />;
-		shallow(<Component />);
+		render(<Component />);
 	});
 
 	it('should 	 the error', () => {
 		const Component = () => <ErrorBloc error="This is an error" />;
-		const wrapper = mount(<Component />);
+		const { container } = render(<Component />);
 
-		const alertBoc = wrapper.find('.alert');
-		expect(alertBoc.get(0).props.style.visibility).toEqual('visible');
-		expect(alertBoc.html()).toContain('This is an error');
+		const alertBoc = container.querySelector('.alert');
+		expect(alertBoc.style.visibility).toEqual('visible');
+		expect(alertBoc.innerHTML).toContain('This is an error');
 	});
 
 	it('should not display any error', () => {
 		const Component = () => <ErrorBloc />;
-		const wrapper = mount(<Component />);
+		const { container } = render(<Component />);
 
-		const alertBoc = wrapper.find('.alert');
-		expect(alertBoc.get(0).props.style.visibility).toEqual('hidden');
+		const alertBoc = container.querySelector('.alert');
+		expect(alertBoc.style.visibility).toEqual('hidden');
 	});
 	it('should display an error from the dictionnay', () => {
 		const Component = () => (
 			<ErrorBloc error={'{"code": 402, "message": "this is a message"}'} />
 		);
-		const wrapper = mount(<Component />);
+		const { container } = render(<Component />);
 
-		const alertBoc = wrapper.find('.alert');
-		expect(alertBoc.get(0).props.style.visibility).toEqual('visible');
-		expect(alertBoc.html()).toContain('402 fr');
+		const alertBoc = container.querySelector('.alert');
+		expect(alertBoc.style.visibility).toEqual('visible');
+		expect(alertBoc.innerHTML).toContain('402 fr');
 	});
 
 	it('should display an error from the dictionnay with a dynamic value', () => {
@@ -47,21 +47,21 @@ describe('error-bloc', () => {
 				error={'{"code": 403, "message": "this is a message", "idConcept": 1}'}
 			/>
 		);
-		const wrapper = mount(<Component />);
+		const { container } = render(<Component />);
 
-		const alertBoc = wrapper.find('.alert');
-		expect(alertBoc.get(0).props.style.visibility).toEqual('visible');
-		expect(alertBoc.html()).toContain('1 is required');
+		const alertBoc = container.querySelector('.alert');
+		expect(alertBoc.style.visibility).toEqual('visible');
+		expect(alertBoc.innerHTML).toContain('1 is required');
 	});
 
 	it('should display an error from the dictionnay even if the code contains empty space', () => {
 		const Component = () => (
 			<ErrorBloc error={'{"code": 402, "message": "this is a message"}'} />
 		);
-		const wrapper = mount(<Component />);
+		const { container } = render(<Component />);
 
-		const alertBoc = wrapper.find('.alert');
-		expect(alertBoc.get(0).props.style.visibility).toEqual('visible');
-		expect(alertBoc.html()).toContain('402 fr');
+		const alertBoc = container.querySelector('.alert');
+		expect(alertBoc.style.visibility).toEqual('visible');
+		expect(alertBoc.innerHTML).toContain('402 fr');
 	});
 });

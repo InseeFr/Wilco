@@ -1,19 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import PageSubtitle from '.';
 
 describe('page-subTitle', () => {
 	it('renders without crashing', () => {
-		shallow(<PageSubtitle subTitle="subTitle" />);
+		render(<PageSubtitle subTitle="subTitle" />);
 	});
 
 	it('returns component subtitle', () => {
-		const wrapper = shallow(<PageSubtitle subTitle="subTitle" />);
-		expect(wrapper.find('.bauhaus-page-subtitle').text()).toEqual('subTitle');
+		const { container } = render(<PageSubtitle subTitle="subTitle" />);
+		expect(container.querySelector('.bauhaus-page-subtitle').innerHTML).toEqual(
+			'subTitle'
+		);
 	});
 
 	it('returns component into row', () => {
-		const wrapper = shallow(<PageSubtitle subTitle="subTitle" />);
-		expect(wrapper.find('.row')).toHaveLength(1);
+		const { container } = render(<PageSubtitle subTitle="subTitle" />);
+		expect(container.querySelectorAll('.row')).toHaveLength(1);
 	});
 });

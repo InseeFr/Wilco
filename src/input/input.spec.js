@@ -1,12 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Input from './input';
-import { ControlLabel } from 'react-bootstrap';
-import Flag from '../flag';
 
 describe('input', () => {
 	it('renders without crashing', () => {
-		shallow(
+		render(
 			<Input
 				id="id"
 				label="label"
@@ -18,7 +16,7 @@ describe('input', () => {
 	});
 
 	it('should display a ControlLabel component with the label', () => {
-		const container = shallow(
+		const { container } = render(
 			<Input
 				id="id"
 				label="label"
@@ -27,10 +25,10 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.find(ControlLabel).length).toBe(1);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(1);
 	});
 	it('should display a ControlLabel component with the label and flag', () => {
-		const container = shallow(
+		const { container } = render(
 			<Input
 				id="id"
 				label="label"
@@ -40,11 +38,11 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.find(ControlLabel).length).toBe(1);
-		expect(container.find(Flag).length).toBe(1);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(1);
+		expect(container.querySelectorAll('.img-flag')).toHaveLength(1);
 	});
 	it('should not display a ControlLabel component ', () => {
-		const container = shallow(
+		const { container } = render(
 			<Input
 				id="id"
 				placeholder="placeholder"
@@ -52,6 +50,6 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.find(ControlLabel).length).toBe(0);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(0);
 	});
 });

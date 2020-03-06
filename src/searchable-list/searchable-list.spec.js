@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import SearchableList from '.';
 
 const items = Array.apply(null, Array(50)).map((a, i) => ({
@@ -9,6 +10,10 @@ const items = Array.apply(null, Array(50)).map((a, i) => ({
 
 describe('SearchableList', () => {
 	it('renders without crashing', () => {
-		shallow(<SearchableList items={items} childPath="concept" />);
+		render(
+			<MemoryRouter>
+				<SearchableList items={items} childPath="concept" />
+			</MemoryRouter>
+		);
 	});
 });

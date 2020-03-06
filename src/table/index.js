@@ -88,4 +88,8 @@ const Table = ({
 	);
 };
 
+Table.defaultProps = {
+	onRowClick: () => {},
+};
+
 export default Table;

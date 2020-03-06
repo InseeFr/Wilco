@@ -1,26 +1,32 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import PageTitle from '.';
 
 describe('page-title', () => {
 	it('renders without crashing', () => {
-		shallow(<PageTitle title="title" subtitle="subtitle" />);
+		render(<PageTitle title="title" subtitle="subtitle" />);
 	});
 
 	it('returns component title', () => {
-		const wrapper = shallow(<PageTitle title="title" />);
-		expect(wrapper.find('.bauhaus-page-title').text()).toEqual('title');
+		const { container } = render(<PageTitle title="title" />);
+		expect(
+			container.querySelector('.bauhaus-page-title__title').innerHTML
+		).toEqual('title');
 	});
 
 	it('returns component text', () => {
-		const wrapper = shallow(<PageTitle title="title" subtitle="subtitle" />);
-		expect(wrapper.find('.bauhaus-page-title').text()).toEqual(
-			'title" subtitle "'
+		const { container } = render(
+			<PageTitle title="title" subtitle="subtitle" />
 		);
+		expect(
+			container.querySelector('.bauhaus-page-title__title').innerHTML
+		).toEqual('title<div>" subtitle "</div>');
 	});
 
 	it('returns component into row', () => {
-		const wrapper = shallow(<PageTitle title="title" subtitle="subtitle" />);
-		expect(wrapper.find('.row')).toHaveLength(1);
+		const { container } = render(
+			<PageTitle title="title" subtitle="subtitle" />
+		);
+		expect(container.querySelectorAll('.row')).toHaveLength(1);
 	});
 });
