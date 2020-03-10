@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import D from '../build-dictionary';
 import './back-to-top.scss';
 
@@ -22,14 +22,24 @@ window.onload = function() {
 };
 
 export default function BackToTop({ label }) {
+	const clickHandler = useCallback(() => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	}, []);
 	const text = D.backToTop || label;
 	return (
 		// eslint-disable-next-line
-		<a href="#" className={className} style={{ display: 'none' }}>
+		<button
+			onClick={clickHandler}
+			className={className}
+			style={{ display: 'none' }}
+		>
 			<span className="glyphicon glyphicon-chevron-up" />
 			<span data-i18n="footer.sticky-top.texte" className="sticky-text">
 				{text}
 			</span>
-		</a>
+		</button>
 	);
 }
