@@ -27,10 +27,6 @@
 	}
 }
 
-.navbar-nav {
-	width: 100%;
-}
-
 .navbar-primary {
 	background: var(--color-3);
 	font-size: 15.3pt;
@@ -47,25 +43,23 @@
 	.navbar-nav {
 		> li {
 			padding: 0 10px;
-		}
-		a {
-			color: white;
-			border: 0;
-			text-decoration: none;
-
-			&:focus,
 			&:hover {
-				background: none;
+				margin-left: -1px;
+				background-color: white;
+				> a,
+				> button {
+					color: var(--menu-active-page);
+				}
 			}
-		}
+			a {
+				color: white !important;
+				border: 0;
+				text-decoration: none;
 
-		> .active,
-		> li:hover {
-			margin-left: -1px;
-			background-color: white;
-			> a,
-			> button {
-				color: var(--menu-active-page);
+				&:focus,
+				&:hover {
+					background: none;
+				}
 			}
 		}
 	}
