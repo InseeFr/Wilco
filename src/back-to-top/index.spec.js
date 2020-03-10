@@ -8,10 +8,12 @@ describe('BackToTop', () => {
 	});
 	it('should contain a button', () => {
 		const { container } = render(<BackToTop label="Back to Top" />);
-		expect(container.querySelector('button')).toBeDefined())
+		expect(container.querySelector('button')).toBeDefined();
 	});
 	it('should contain the right text', () => {
 		const { container } = render(<BackToTop label="Back to Top" />);
-		expect(container.querySelector('button').innerHTML).toContain('Back to Top');
+		expect(container.querySelector('button').innerHTML).toContain(
+			'Back to Top'
+		);
 	});
 });
