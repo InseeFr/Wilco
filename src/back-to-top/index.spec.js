@@ -6,12 +6,12 @@ describe('BackToTop', () => {
 	it('renders without crashing', () => {
 		render(<BackToTop />);
 	});
-	it('should contain a href=# link', () => {
+	it('should contain a button', () => {
 		const { container } = render(<BackToTop label="Back to Top" />);
-		expect(container.querySelector('a').href).toContain('#');
+		expect(container.querySelector('button')).toBeDefined())
 	});
 	it('should contain the right text', () => {
 		const { container } = render(<BackToTop label="Back to Top" />);
-		expect(container.querySelector('a').innerHTML).toContain('Back to Top');
+		expect(container.querySelector('button').innerHTML).toContain('Back to Top');
 	});
 });
