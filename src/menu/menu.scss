@@ -44,8 +44,8 @@
 		> li {
 			padding: 0 10px;
 			&:hover {
+				background: var(--color-2);
 				margin-left: -1px;
-				background-color: white;
 				> a,
 				> button {
 					color: var(--menu-active-page);
