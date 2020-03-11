@@ -6,7 +6,7 @@ const PageSubtitle = ({ subTitle }) => {
 	return (
 		<div className="row">
 			<div className="col-md-8 centered col-md-offset-2">
-				<h3 className="bauhaus-page-subtitle">{subTitle}</h3>
+				<h3 className="wilco-page-subtitle">{subTitle}</h3>
 			</div>
 		</div>
 	);

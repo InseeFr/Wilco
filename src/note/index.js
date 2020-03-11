@@ -6,7 +6,7 @@ export default ({ text = '', title, alone, allowEmpty = false, alt = '' }) => {
 	if (!text && !allowEmpty) return null;
 
 	return (
-		<div className={`bauhaus-note ${cl}`} title={alt}>
+		<div className={`wilco-note ${cl}`} title={alt}>
 			<Panel title={title}>{text}</Panel>
 		</div>
 	);

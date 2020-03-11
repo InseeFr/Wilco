@@ -55,7 +55,7 @@ describe('pagination', () => {
 		);
 
 		expect(
-			container.querySelector('.bauhaus-pagination li:nth-child(3)').className
+			container.querySelector('.wilco-pagination li:nth-child(3)').className
 		).toContain('active');
 	});
 	it('should have the right number of LI', () => {
@@ -69,9 +69,7 @@ describe('pagination', () => {
 			</MemoryRouter>
 		);
 
-		expect(container.querySelectorAll('.bauhaus-pagination li')).toHaveLength(
-			7
-		);
+		expect(container.querySelectorAll('.wilco-pagination li')).toHaveLength(7);
 	});
 
 	it('all links should have the aria-label attributes', () => {

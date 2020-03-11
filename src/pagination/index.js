@@ -61,7 +61,7 @@ export const Pagination = React.memo(
 				<ul className="list-group">{currentItems}</ul>
 				{pageNumbers.length > 1 && (
 					<div>
-						<ul className={`bauhaus-pagination`}>
+						<ul className={`wilco-pagination`}>
 							<li>
 								<Link
 									to={`${pathname}?page=1`}

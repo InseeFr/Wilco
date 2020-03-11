@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import D from '../build-dictionary';
 import './back-to-top.scss';
 
-const className = 'bauhaus-sticky-top';
+const className = 'wilco-sticky-top';
 
 window.onload = function() {
 	document.addEventListener(

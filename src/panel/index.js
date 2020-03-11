@@ -4,7 +4,7 @@ import './panel.scss';
 
 function Panel({ title, children }) {
 	return (
-		<div className="panel bauhaus-panel">
+		<div className="panel wilco-panel">
 			<div className="panel-heading">
 				<h3 className="panel-title">{title}</h3>
 			</div>
