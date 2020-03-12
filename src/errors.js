@@ -238,7 +238,7 @@ export default {
 		},
 		804: {
 			fr: () =>
-				'Vous ne pouvez pas publier une documentation Sims sans avoir publier au préalable l’objet qu’il documente. Merci de publier l’objet documenté.',
+				'Vous ne pouvez pas publier une documentation Sims sans avoir publié au préalable l’objet qu’il documente. Merci de publier l’objet documenté.',
 			en: () =>
 				'You can not publish a Sims documentation without first publishing the object it documents. Please, publish the documented object.',
 		},
