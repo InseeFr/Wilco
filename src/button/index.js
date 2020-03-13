@@ -29,7 +29,7 @@ const Button = ({
 	if (typeof action === 'string') {
 		button = (
 			<Link
-				className="btn bauhaus-btn btn-lg col-md-12"
+				className="btn wilco-btn btn-lg col-md-12"
 				to={action}
 				disabled={disabled}
 			>
@@ -40,7 +40,7 @@ const Button = ({
 		//if action is a function, it means a handler was passed in instead of an URL
 		button = (
 			<button
-				className="btn bauhaus-btn btn-lg col-md-12"
+				className="btn wilco-btn btn-lg col-md-12"
 				onClick={action}
 				disabled={disabled}
 			>

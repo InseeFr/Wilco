@@ -10,15 +10,15 @@ const Loading = ({ textType, text }) => {
 	const D = useContext(I18NContext);
 	const content = text || getText(textType, D);
 	return (
-		<div className="bauhaus-loading">
+		<div className="wilco-loading">
 			<ReactLoading
-				className="bauhaus-loader"
+				className="wilco-loader"
 				type="spinningBubbles"
 				delay={0}
 				height="100%"
 				width="100%"
 			/>
-			<h3 className="bauhaus-loading-text">{content}</h3>
+			<h3 className="wilco-loading-text">{content}</h3>
 		</div>
 	);
 };

@@ -41,3 +41,16 @@ stories.add('With links on the right and the left sides', () => {
 	];
 	return <Menu paths={paths} />;
 });
+stories.add('With an active link', () => {
+	const paths = [
+		{
+			label: 'Link1',
+			className: 'active',
+			order: 0,
+			path: 'link1',
+			alignToRight: false,
+		},
+		{ label: 'Link2', order: 2, path: 'link2', alignToRight: false },
+	];
+	return <Menu paths={paths} />;
+});

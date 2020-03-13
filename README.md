@@ -8,3 +8,18 @@ Visual components
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 [Storybook](https://inseefr.github.io/Wilco/storybook) is available online.
+
+# Include Wilco in my project
+
+If you want to add the module into your own project, you should first install it via NPM or yarn
+
+```shell
+npm i @inseefr/wilco bootstrap@3.4.1
+```
+
+Then, you need to include the CSS stylesheet of `bootstrap` and the CSS stylesheet of this module.
+
+```javascript
+import 'bootstrap/dist/css/bootstrap.css';
+import '@inseefr/wilco/dist/index.css';
+```

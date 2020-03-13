@@ -9,7 +9,7 @@ describe('page-subTitle', () => {
 
 	it('returns component subtitle', () => {
 		const { container } = render(<PageSubtitle subTitle="subTitle" />);
-		expect(container.querySelector('.bauhaus-page-subtitle').innerHTML).toEqual(
+		expect(container.querySelector('.wilco-page-subtitle').innerHTML).toEqual(
 			'subTitle'
 		);
 	});

@@ -60,7 +60,7 @@ const Table = ({
 	);
 	return (
 		<Fragment>
-			<div className={`${cssClass} bauhaus-table pagination marginTop`}>
+			<div className={`${cssClass} wilco-table pagination marginTop`}>
 				<ToolkitProvider keyField="id" columns={columns} data={data} search>
 					{props => (
 						<Fragment>
