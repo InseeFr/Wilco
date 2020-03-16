@@ -10,7 +10,7 @@ const { dependencies } = require('./package.json');
 export default {
 	input: 'src/index.js',
 	output: {
-		name: 'vtl-tools',
+		name: 'wilco',
 		file: 'dist/index.js',
 		format: 'cjs',
 		strict: false,
