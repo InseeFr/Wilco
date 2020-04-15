@@ -20,7 +20,7 @@ const ErrorBloc = ({ error }) => {
 				className="alert alert-danger"
 				role="alert"
 			>
-				{errorMsg || <span style={{ whiteSpace: 'pre-wrap' }}> </span>}
+				<strong>{errorMsg || <span style={{ whiteSpace: 'pre-wrap' }}> </span>}</strong>
 			</div>
 		</div>
 	);
