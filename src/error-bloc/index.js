@@ -14,7 +14,7 @@ const ErrorBloc = ({ error }) => {
 	}
 
 	return (
-		<div className="empty-center centered">
+		<div className="empty-center text-center">
 			<div
 				style={{ visibility: errorMsg ? 'visible' : 'hidden' }}
 				className="alert alert-danger"

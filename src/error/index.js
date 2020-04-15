@@ -4,8 +4,8 @@ import D from '../build-dictionary';
 export default ({ home }) => {
 	return (
 		<div>
-			{home && <h1 className="centered page-title">{D.welcome}</h1>}
-			<div className="container centered">
+			{home && <h1 className="text-center page-title">{D.welcome}</h1>}
+			<div className="container text-center">
 				<PageTitle title={D.errorTitle} col={6} offset={3} />
 				<p className="col-md-8 col-md-offset-2">{D.errorBody}</p>
 			</div>
