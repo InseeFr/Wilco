@@ -25,6 +25,14 @@ export const AbstractButton = (props) => {
 	return <Button {...p} />;
 };
 
+export const ResetButton = (props) => {
+	return (
+		<AbstractButton icon="flash" {...props}>
+			{D.btnReinitialize}
+		</AbstractButton>
+	);
+};
+
 export const ExportButton = (props) => {
 	return (
 		<AbstractButton icon="export" {...props}>
