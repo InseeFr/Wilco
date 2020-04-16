@@ -20,8 +20,8 @@ function Select({
 }) {
 	const isClearable = unclearable ? false : true;
 	const onChangeSelect = multi
-		? e => onChange(e)
-		: e => onChange(e ? e.value : '');
+		? (e) => onChange(e)
+		: (e) => onChange(e ? e.value : '');
 
 	return (
 		<FormGroup controlId={id}>
@@ -34,7 +34,7 @@ function Select({
 				clearable={isClearable}
 				searchable={searchable}
 				noResultsText={D.noResult}
-				multi={multi}
+				isMulti={multi}
 				disabled={disabled}
 			/>
 			{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}
