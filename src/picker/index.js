@@ -64,7 +64,7 @@ const Picker = ({ items: propsItems, onChange, panelTitle }) => {
 			<div className="col-md-6">
 				<Panel title={panelTitle}>{addedEls}</Panel>
 			</div>
-			<div className="col-md-6 centered">
+			<div className="col-md-6 text-center">
 				<input
 					value={searchLabel}
 					onChange={e => setSearchLabel(e.target.value)}

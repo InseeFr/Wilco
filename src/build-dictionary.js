@@ -10,6 +10,10 @@ const dictionary = {
 		fr: 'Retour',
 		en: 'Back',
 	},
+	btnReinitialize: {
+		fr: 'Réinitialiser',
+		en: 'Reinitialize',
+	},
 	btnUpdate: {
 		fr: 'Modifier',
 		en: 'Update',

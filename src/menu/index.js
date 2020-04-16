@@ -27,10 +27,13 @@ export default ({ paths }) => {
 	);
 
 	return (
-		<nav class="navbar navbar-default navbar-primary">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
+		<nav className="navbar navbar-default navbar-primary">
+			<div className="container-fluid">
+				<div
+					className="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1"
+				>
+					<ul className="nav navbar-nav">
 						{allPaths[0].map((path, index) => {
 							const classes = getClasses(path, index, allPaths[0]);
 
@@ -44,7 +47,7 @@ export default ({ paths }) => {
 						})}
 					</ul>
 
-					<ul class="nav navbar-nav navbar-right">
+					<ul className="nav navbar-nav navbar-right">
 						{allPaths[1].map((path, index) => {
 							const classes = getClasses(path, index, allPaths[1]);
 

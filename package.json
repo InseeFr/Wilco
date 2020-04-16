@@ -10,7 +10,9 @@
 	"main": "dist/index.js",
 	"source": "src/index.js",
 	"files": [
-		"dist/*"
+		"dist",
+		"lib",
+		"src"
 	],
 	"scripts": {
 		"build": "rollup -c rollup.config.js",

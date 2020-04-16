@@ -4,7 +4,7 @@ import { FormGroup, ControlLabel, Radio } from 'react-bootstrap';
 export default ({ id, label, answers, onChange }) => (
 	<FormGroup controlId={id}>
 		<ControlLabel>{label}</ControlLabel>
-		<div className="centered">
+		<div className="text-center">
 			{answers.map(({ value, label: lb }, i) => (
 				<Radio
 					key={`${id}-${i}`}

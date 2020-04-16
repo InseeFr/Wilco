@@ -8,10 +8,11 @@ import AbstractButton, {
 	CancelButton,
 	SaveButton,
 	DuplicateButton,
+	ResetButton,
 } from './';
 
 storiesOf('Button With Icons', module)
-	.addDecorator(function(getStory) {
+	.addDecorator(function (getStory) {
 		return (
 			<I18NContext.Provider
 				value={{
@@ -33,4 +34,5 @@ storiesOf('Button With Icons', module)
 	.add('NewButton', () => <NewButton />)
 	.add('CancelButton', () => <CancelButton />)
 	.add('SaveButton', () => <SaveButton />)
+	.add('ResetButton', () => <ResetButton />)
 	.add('DuplicateButton', () => <DuplicateButton />);

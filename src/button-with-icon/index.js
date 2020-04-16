@@ -2,14 +2,14 @@ import React from 'react';
 import Button from '../button';
 import D from '../build-dictionary';
 
-export const ReturnButton = props => {
+export const ReturnButton = (props) => {
 	return <Button label={D.btnReturn} {...props} />;
 };
 
-export const UpdateButton = props => {
+export const UpdateButton = (props) => {
 	return <Button label={D.btnUpdate} {...props} />;
 };
-export const AbstractButton = props => {
+export const AbstractButton = (props) => {
 	const p = {
 		...props,
 		label: (
@@ -25,7 +25,15 @@ export const AbstractButton = props => {
 	return <Button {...p} />;
 };
 
-export const ExportButton = props => {
+export const ResetButton = (props) => {
+	return (
+		<AbstractButton icon="flash" {...props}>
+			{D.btnReinitialize}
+		</AbstractButton>
+	);
+};
+
+export const ExportButton = (props) => {
 	return (
 		<AbstractButton icon="export" {...props}>
 			{D.btnExport}
@@ -33,28 +41,28 @@ export const ExportButton = props => {
 	);
 };
 
-export const PublishButton = props => {
+export const PublishButton = (props) => {
 	return (
 		<AbstractButton icon="ok" {...props}>
 			{D.btnValid}
 		</AbstractButton>
 	);
 };
-export const NewButton = props => {
+export const NewButton = (props) => {
 	return (
 		<AbstractButton icon="plus" {...props}>
 			{D.btnNewMale}
 		</AbstractButton>
 	);
 };
-export const CancelButton = props => {
+export const CancelButton = (props) => {
 	return (
 		<AbstractButton icon="floppy-remove" {...props}>
 			{D.btnCancel}
 		</AbstractButton>
 	);
 };
-export const SaveButton = props => {
+export const SaveButton = (props) => {
 	return (
 		<AbstractButton icon="floppy-disk" {...props}>
 			{D.btnSave}
@@ -62,7 +70,7 @@ export const SaveButton = props => {
 	);
 };
 
-export const DuplicateButton = props => {
+export const DuplicateButton = (props) => {
 	return (
 		<AbstractButton icon="duplicate" {...props}>
 			{D.btnDuplicate}

@@ -14,13 +14,13 @@ const ErrorBloc = ({ error }) => {
 	}
 
 	return (
-		<div className="empty-center centered">
+		<div className="empty-center text-center">
 			<div
 				style={{ visibility: errorMsg ? 'visible' : 'hidden' }}
 				className="alert alert-danger"
 				role="alert"
 			>
-				{errorMsg || <span style={{ whiteSpace: 'pre-wrap' }}> </span>}
+				<strong>{errorMsg || <span style={{ whiteSpace: 'pre-wrap' }}> </span>}</strong>
 			</div>
 		</div>
 	);
