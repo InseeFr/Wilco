@@ -9,7 +9,7 @@ Visual components
 
 [Storybook](https://inseefr.github.io/Wilco/storybook) is available online.
 
-# Include Wilco in my project
+## Include Wilco in my project
 
 If you want to add the module into your own project, you should first install it via NPM or yarn
 
