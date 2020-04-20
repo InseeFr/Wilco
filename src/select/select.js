@@ -31,10 +31,10 @@ function Select({
 				options={options}
 				onChange={onChangeSelect}
 				placeholder={placeholder}
-				clearable={isClearable}
 				searchable={searchable}
 				noResultsText={D.noResult}
 				isMulti={multi}
+				isClearable={isClearable}
 				disabled={disabled}
 			/>
 			{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}

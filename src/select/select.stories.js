@@ -19,14 +19,23 @@ const options = [
 ];
 
 stories.add('Default', () => (
-	<Select kabke="label" value={options[0]} options={options} />
+	<Select label="label" value={options[0]} options={options} />
 ));
 
 stories.add('With multiple values', () => (
 	<Select
-		kabke="label"
+		label="label"
 		value={[options[0], options[1]]}
 		multi={true}
 		options={options}
+	/>
+));
+
+stories.add('Clearable select', () => (
+	<Select
+		label="label"
+		value={options[0]}
+		options={options}
+		unclearable={false}
 	/>
 ));
