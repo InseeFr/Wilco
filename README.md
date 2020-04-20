@@ -23,3 +23,7 @@ Then, you need to include the CSS stylesheet of `bootstrap` and the CSS styleshe
 import 'bootstrap/dist/css/bootstrap.css';
 import '@inseefr/wilco/dist/index.css';
 ```
+
+## Naming conventions
+
+- All CSS classes defined in Wilco should be prefixed by `wilco-`
