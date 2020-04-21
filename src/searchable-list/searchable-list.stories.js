@@ -25,6 +25,13 @@ stories.add('Default', () => <SearchableList items={items} />);
 stories.add('With a custom formatter', () => (
 	<SearchableList
 		items={items}
-		itemFormatter={(content) => <p>🎉 {content}</p>}
+		itemFormatter={(content) => (
+			<p>
+				<span role="img" aria-label="youpi">
+					🎉
+				</span>{' '}
+				{content}
+			</p>
+		)}
 	/>
 ));
