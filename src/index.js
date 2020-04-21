@@ -16,6 +16,8 @@ export {
 	ExportButton,
 	ReturnButton,
 	UpdateButton,
+	ResetButton,
+	DeleteButton,
 } from './button-with-icon';
 export { default as ErrorBloc } from './error-bloc';
 export { default as Error } from './error';
@@ -47,5 +49,6 @@ export { default as WarningLogo } from './logo/logo-warning';
 export { default as AddLogo } from './logo/logo-add';
 export { default as DelLogo } from './logo/logo-del';
 export { default as VerticalMenu } from './vertical-menu';
-
+export { default as LabelRequired } from './label-required';
+export { default as NumberResult } from './number-result';
 export * from './utils';

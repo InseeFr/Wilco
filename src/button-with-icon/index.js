@@ -78,4 +78,12 @@ export const DuplicateButton = (props) => {
 	);
 };
 
+export const DeleteButton = (props) => {
+	return (
+		<AbstractButton icon="trash" {...props}>
+			{D.btnDelete}
+		</AbstractButton>
+	);
+};
+
 export default AbstractButton;

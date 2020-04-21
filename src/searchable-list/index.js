@@ -16,18 +16,21 @@ const SearchableList = ({
 	label,
 	autoFocus,
 	searchValue = '',
+	itemFormatter = (content, item) => content,
 }) => {
 	const [search, handleSearch] = useState(searchValue);
 
 	const filter = filterKeyDeburr(
-		Object.keys(items[0] || {}).filter(k => k !== 'id')
+		Object.keys(items[0] || {}).filter((k) => k !== 'id')
 	);
 
 	const hits = items.filter(filter(search));
 
-	const hitEls = hits.map(({ id, [label]: labelValue }) => (
-		<li key={id} className="list-group-item">
-			<Link to={`/${childPath}/${id}`}>{labelValue}</Link>
+	const hitEls = hits.map((item) => (
+		<li key={item.id} className="list-group-item">
+			<Link to={`/${childPath}/${item.id}`}>
+				{itemFormatter(item[label], item)}
+			</Link>
 		</li>
 	));
 
@@ -40,7 +43,7 @@ const SearchableList = ({
 				<div className="col-md-12">
 					<input
 						value={search}
-						onChange={e => handleSearch(e.target.value)}
+						onChange={(e) => handleSearch(e.target.value)}
 						type="text"
 						placeholder={D.searchLabelPlaceholder || placeholder}
 						className="form-control"
