@@ -9,7 +9,7 @@ Visual components
 
 [Storybook](https://inseefr.github.io/Wilco/storybook) is available online.
 
-# Include Wilco in my project
+## Include Wilco in my project
 
 If you want to add the module into your own project, you should first install it via NPM or yarn
 
@@ -23,3 +23,7 @@ Then, you need to include the CSS stylesheet of `bootstrap` and the CSS styleshe
 import 'bootstrap/dist/css/bootstrap.css';
 import '@inseefr/wilco/dist/index.css';
 ```
+
+## Naming conventions
+
+- All CSS classes defined in Wilco should be prefixed by `wilco-`

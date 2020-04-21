@@ -18,6 +18,10 @@ const dictionary = {
 		fr: 'Modifier',
 		en: 'Update',
 	},
+	btnDelete: {
+		fr: 'Supprimer',
+		en: 'Delete',
+	},
 	btnExport: {
 		fr: 'Exporter',
 		en: 'Export',

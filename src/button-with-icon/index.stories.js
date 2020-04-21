@@ -9,6 +9,7 @@ import AbstractButton, {
 	SaveButton,
 	DuplicateButton,
 	ResetButton,
+	DeleteButton,
 } from './';
 
 storiesOf('Button With Icons', module)
@@ -35,4 +36,5 @@ storiesOf('Button With Icons', module)
 	.add('CancelButton', () => <CancelButton />)
 	.add('SaveButton', () => <SaveButton />)
 	.add('ResetButton', () => <ResetButton />)
-	.add('DuplicateButton', () => <DuplicateButton />);
+	.add('DuplicateButton', () => <DuplicateButton />)
+	.add('DeleteButton', () => <DeleteButton />);
