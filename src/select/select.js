@@ -36,6 +36,7 @@ function Select({
 				isMulti={multi}
 				isClearable={isClearable}
 				disabled={disabled}
+				aria-label={label || placeholder}
 			/>
 			{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}
 		</FormGroup>
@@ -51,7 +52,11 @@ Select.defaultProps = {
 };
 
 Select.propTypes = {
-	value: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+	value: PropTypes.oneOfType([
+		PropTypes.array,
+		PropTypes.object,
+		PropTypes.string,
+	]),
 	placeholder: PropTypes.string.isRequired,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
