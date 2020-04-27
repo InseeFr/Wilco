@@ -45,6 +45,14 @@ export const ExportButton = (props) => {
 	);
 };
 
+export const ImportButton = (props) => {
+	return (
+		<AbstractButton icon="import" {...props}>
+			{D.btnImport}
+		</AbstractButton>
+	);
+};
+
 export const PublishButton = (props) => {
 	return (
 		<AbstractButton icon="ok" {...props}>

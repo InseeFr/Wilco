@@ -26,6 +26,10 @@ const dictionary = {
 		fr: 'Exporter',
 		en: 'Export',
 	},
+	btnImport: {
+		fr: 'Importer',
+		en: 'Import',
+	},
 	btnValid: {
 		fr: 'Publier',
 		en: 'Publish',
