@@ -94,7 +94,10 @@
 		"useTabs": true
 	},
 	"dependencies": {
-		"lodash": "^4.17.15",
+		"lodash.deburr": "^4.1.0",
+		"lodash.difference": "^4.5.0",
+		"lodash.filter": "^4.6.0",
+		"lodash.map": "^4.6.0",
 		"query-string": "^6.9.0",
 		"react-bootstrap": "0.31.5",
 		"react-bootstrap-table-next": "3.3.3",

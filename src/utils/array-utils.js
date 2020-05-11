@@ -1,11 +1,14 @@
-import _ from 'lodash';
+import deburr from 'lodash.deburr';
+import difference from 'lodash.difference';
+import filter from 'lodash.filter';
+import map from 'lodash.map';
 
-export const filterKeyDeburr = keys => rawStr => {
-	const str = _.deburr(rawStr).toLocaleLowerCase();
-	return item => {
+export const filterKeyDeburr = (keys) => (rawStr) => {
+	const str = deburr(rawStr).toLocaleLowerCase();
+	return (item) => {
 		let isIn = false;
 		for (var i = 0; i < keys.length; i++) {
-			if (_.deburr((item[keys[i]] || '').toLocaleLowerCase()).includes(str)) {
+			if (deburr((item[keys[i]] || '').toLocaleLowerCase()).includes(str)) {
 				isIn = true;
 				break;
 			}
@@ -20,17 +23,14 @@ export const nbResults = (array, dictionnary) => {
 };
 
 export const arrayDifferenceByID = (array1, array2) => {
-	const diff = _.difference(_.map(array1, 'id'), _.map(array2, 'id'));
-	const result = _.filter(array1, function(obj) {
+	const diff = difference(map(array1, 'id'), map(array2, 'id'));
+	const result = filter(array1, function (obj) {
 		return diff.indexOf(obj.id) >= 0;
 	});
 	return result;
 };
 
-export const filterDeburr = rawStr => {
-	const str = _.deburr(rawStr).toLocaleLowerCase();
-	return item =>
-		_.deburr(item)
-			.toLocaleLowerCase()
-			.includes(str);
+export const filterDeburr = (rawStr) => {
+	const str = deburr(rawStr).toLocaleLowerCase();
+	return (item) => deburr(item).toLocaleLowerCase().includes(str);
 };
