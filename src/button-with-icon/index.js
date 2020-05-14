@@ -2,10 +2,6 @@ import React from 'react';
 import Button from '../button';
 import D from '../build-dictionary';
 
-export const ReturnButton = (props) => {
-	return <Button label={D.btnReturn} {...props} />;
-};
-
 export const UpdateButton = (props) => {
 	return <Button label={D.btnUpdate} {...props} />;
 };
@@ -25,6 +21,14 @@ export const AbstractButton = (props) => {
 	return <Button {...p} />;
 };
 
+export const ReturnButton = (props) => {
+	return (
+		<AbstractButton icon="menu-left" {...props}>
+			{D.btnReturn}
+		</AbstractButton>
+	);
+};
+
 export const ResetButton = (props) => {
 	return (
 		<AbstractButton icon="flash" {...props}>
@@ -37,6 +41,14 @@ export const ExportButton = (props) => {
 	return (
 		<AbstractButton icon="export" {...props}>
 			{D.btnExport}
+		</AbstractButton>
+	);
+};
+
+export const ImportButton = (props) => {
+	return (
+		<AbstractButton icon="import" {...props}>
+			{D.btnImport}
 		</AbstractButton>
 	);
 };

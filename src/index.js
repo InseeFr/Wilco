@@ -14,6 +14,7 @@ export {
 	NewButton,
 	PublishButton,
 	ExportButton,
+	ImportButton,
 	ReturnButton,
 	UpdateButton,
 	ResetButton,

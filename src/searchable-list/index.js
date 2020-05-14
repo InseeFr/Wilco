@@ -56,7 +56,7 @@ const SearchableList = ({
 				<div className="row">
 					<div className="col-md-12">
 						<Link to={searchUrl}>
-							<h2 className="inline">
+							<h2>
 								<span
 									className="glyphicon glyphicon-zoom-in"
 									aria-hidden="true"

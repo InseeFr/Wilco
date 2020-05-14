@@ -10,6 +10,8 @@ import AbstractButton, {
 	DuplicateButton,
 	ResetButton,
 	DeleteButton,
+	ReturnButton,
+	ImportButton,
 } from './';
 
 storiesOf('Button With Icons', module)
@@ -37,4 +39,6 @@ storiesOf('Button With Icons', module)
 	.add('SaveButton', () => <SaveButton />)
 	.add('ResetButton', () => <ResetButton />)
 	.add('DuplicateButton', () => <DuplicateButton />)
-	.add('DeleteButton', () => <DeleteButton />);
+	.add('DeleteButton', () => <DeleteButton />)
+	.add('ReturnButton', () => <ReturnButton />)
+	.add('ImportButton', () => <ImportButton />);
