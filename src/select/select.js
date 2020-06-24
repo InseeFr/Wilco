@@ -35,7 +35,7 @@ function Select({
 				noResultsText={D.noResult}
 				isMulti={multi}
 				isClearable={isClearable}
-				disabled={disabled}
+				isDisabled={disabled}
 				aria-label={label || placeholder}
 			/>
 			{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}

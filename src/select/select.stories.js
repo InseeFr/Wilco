@@ -39,3 +39,7 @@ stories.add('Clearable select', () => (
 		unclearable={false}
 	/>
 ));
+
+stories.add('Disabled select', () => (
+	<Select label="label" value={options[0]} options={options} disabled={true} />
+));
