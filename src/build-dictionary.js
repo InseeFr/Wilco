@@ -83,6 +83,10 @@ const dictionary = {
 		fr: 'Accueil',
 		en: 'Home',
 	},
+	notFoundTitle: {
+		fr: 'Page introuvable',
+		en: 'Page not found',
+	},
 	pagination: {
 		goTo: {
 			en: 'Go to page',
