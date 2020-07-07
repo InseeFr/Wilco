@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { ExplanatoryNote } from './';
+import ExplanatoryNote from './';
 
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
@@ -18,7 +18,9 @@ const html = `
 const stories = storiesOf('ExplanatoryNote', module);
 stories.addDecorator(withKnobs);
 
-const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
+const styleDecorator = (storyFn) => (
+	<div className="col-md-12">{storyFn()}</div>
+);
 stories.addDecorator(styleDecorator);
 
 stories.add('Default', () => (

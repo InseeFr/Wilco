@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ExplanatoryNote } from './';
+import ExplanatoryNote from './';
 
 describe('explanatory-note', () => {
 	it('renders without crashing', () => {

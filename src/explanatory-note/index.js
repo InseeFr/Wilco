@@ -2,7 +2,7 @@ import React from 'react';
 import Note from '../note';
 import DOMPurify from 'dompurify';
 
-export const ExplanatoryNote = ({ text, title, alone }) => {
+const ExplanatoryNote = ({ text, title, alone }) => {
 	const cl = alone ? 'col-md-12' : 'col-md-6';
 	if (!text) return <div className={cl} />;
 	const newText = text.replace(
@@ -23,3 +23,4 @@ export const ExplanatoryNote = ({ text, title, alone }) => {
 		></Note>
 	);
 };
+export default ExplanatoryNote;
