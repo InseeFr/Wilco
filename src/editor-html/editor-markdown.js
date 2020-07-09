@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Editor } from 'react-draft-wysiwyg';
 import './editor-html.scss';
@@ -18,62 +18,43 @@ export const toolbar = {
 	},
 };
 
-class EditorMarkdown extends Component {
-	static propTypes = {
-		text: PropTypes.string,
-		handleChange: PropTypes.func.isRequired,
-		toolbar: PropTypes.object,
-	};
+const EditorMarkdown = ({ text, handleChange, toolbar }) => {
+	const [editorState, setEditorState] = useState(
+		HTMLUtils.editorStateFromMd(text || '')
+	);
 
-	static defaultProps = {
-		toolbar: toolbar,
-	};
+	const handleChangeCallback = useCallback((editorState) => {
+		setEditorState(editorState);
+	}, []);
 
-	constructor(props) {
-		super(props);
-		const { text } = props;
-		this.state = {
-			editorState: HTMLUtils.editorStateFromMd(text || ''),
-			text,
-		};
+	const handleLeaveCallback = useCallback(() => {
+		handleChange(HTMLUtils.mdFromEditorState(editorState));
+	}, [editorState, handleChange]);
 
-		this.editorRef = React.createRef();
-	}
+	return (
+		<Editor
+			editorState={editorState}
+			toolbar={toolbar}
+			toolbarClassName="home-toolbar"
+			wrapperClassName="home-wrapper"
+			editorClassName="home-editor"
+			onEditorStateChange={handleChangeCallback}
+			onBlur={handleLeaveCallback}
+			localization={{
+				locale: getLang(),
+			}}
+		/>
+	);
+};
 
-	handleChange = (editorState) => {
-		this.setState({
-			editorState,
-		});
-	};
-	handleLeave = () => {
-		this.props.handleChange(
-			HTMLUtils.mdFromEditorState(this.state.editorState)
-		);
-	};
+EditorMarkdown.propTypes = {
+	text: PropTypes.string,
+	handleChange: PropTypes.func.isRequired,
+	toolbar: PropTypes.object,
+};
 
-	componentWillReceiveProps(nextProps) {
-		this.setState({
-			editorState: HTMLUtils.editorStateFromMd(nextProps.text || ''),
-		});
-	}
-
-	render() {
-		return (
-			<Editor
-				ref={this.editorRef}
-				editorState={this.state.editorState}
-				toolbar={this.props.toolbar}
-				toolbarClassName="home-toolbar"
-				wrapperClassName="home-wrapper"
-				editorClassName="home-editor"
-				onEditorStateChange={this.handleChange}
-				onBlur={this.handleLeave}
-				localization={{
-					locale: getLang(),
-				}}
-			/>
-		);
-	}
-}
+EditorMarkdown.defaultProps = {
+	toolbar: toolbar,
+};
 
 export default EditorMarkdown;
