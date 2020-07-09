@@ -19,5 +19,7 @@ const storeDecorator = (story) => (
 );
 stories.addDecorator(storeDecorator);
 
-stories.add('Markdown editor', () => <MarkdownEditor />);
-stories.add('Html editor', () => <HtmlEditor />);
+stories.add('Markdown editor', () => (
+	<MarkdownEditor handleChange={() => {}} />
+));
+stories.add('Html editor', () => <HtmlEditor handleChange={() => {}} />);
