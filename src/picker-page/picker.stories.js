@@ -8,10 +8,12 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 const stories = storiesOf('Picker-Page', module);
 stories.addDecorator(withKnobs);
 
-const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
+const styleDecorator = (storyFn) => (
+	<div className="col-md-12">{storyFn()}</div>
+);
 stories.addDecorator(styleDecorator);
 
-const storeDecorator = story => (
+const storeDecorator = (story) => (
 	<MemoryRouter initialEntries={['/']}>{story()}</MemoryRouter>
 );
 stories.addDecorator(storeDecorator);
@@ -28,6 +30,6 @@ stories.add('Default', () => (
 		labelWarning={text('Warning', 'Warning')}
 		labelValidateButton={text('Button label', 'Valid')}
 		handleAction={() => console.log('action')}
-		context="concepts"
+		backUrl="concepts"
 	/>
 ));

@@ -14,7 +14,7 @@ describe('picker-page', () => {
 				labelWarning="labelWarning"
 				labelValidateButton="labelValidateButton"
 				handleAction={() => console.log('action')}
-				context="concepts"
+				backUrl="concepts"
 			/>,
 			{
 				wrapper: MemoryRouter,
