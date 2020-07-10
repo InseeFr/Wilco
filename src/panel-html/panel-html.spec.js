@@ -11,13 +11,13 @@ describe('panel-html', () => {
 		const { container } = render(
 			<PanelHtml title="title">{'<div>Text<div>'}</PanelHtml>
 		);
-		expect(container.querySelector('.panel-title').innerHTML).toEqual('title');
+		expect(container.querySelector('.card-title').innerHTML).toEqual('title');
 	});
 
 	it('returns panel body', () => {
 		const { container } = render(
 			<PanelHtml title="title">{'<div>Text<div>'}</PanelHtml>
 		);
-		expect(container.querySelector('.panel-body')).toBeDefined();
+		expect(container.querySelector('.card-body')).toBeDefined();
 	});
 });

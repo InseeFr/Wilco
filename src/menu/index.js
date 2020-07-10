@@ -7,13 +7,17 @@ import './menu.scss';
 const WITH_SEPARATOR_CLASS = 'with-separator';
 
 function getClasses(path, index, paths) {
-	return [path.className, !paths[index + 1] ? '' : WITH_SEPARATOR_CLASS]
+	return [
+		'nav-item',
+		path.className,
+		!paths[index + 1] ? '' : WITH_SEPARATOR_CLASS,
+	]
 		.join(' ')
 		.trim();
 }
 export default ({ paths }) => {
 	const orderedPaths = paths
-		.filter(path => path.shouldBeDisplayed !== false)
+		.filter((path) => path.shouldBeDisplayed !== false)
 		.sort((p1, p2) => p1.order - p2.order);
 	const allPaths = [{ label: D.home, path: '/' }, ...orderedPaths].reduce(
 		(acc, path) => {
@@ -27,13 +31,10 @@ export default ({ paths }) => {
 	);
 
 	return (
-		<nav className="navbar navbar-default navbar-primary">
+		<nav className="navbar navbar-expand navbar-light navbar-primary">
 			<div className="container-fluid">
-				<div
-					className="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1"
-				>
-					<ul className="nav navbar-nav">
+				<div className="collapse navbar-collapse">
+					<ul className="navbar-nav my-2 mr-auto">
 						{allPaths[0].map((path, index) => {
 							const classes = getClasses(path, index, allPaths[0]);
 
@@ -47,7 +48,7 @@ export default ({ paths }) => {
 						})}
 					</ul>
 
-					<ul className="nav navbar-nav navbar-right">
+					<ul className="navbar-nav navbar-right">
 						{allPaths[1].map((path, index) => {
 							const classes = getClasses(path, index, allPaths[1]);
 

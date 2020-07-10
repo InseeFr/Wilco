@@ -9,13 +9,13 @@ describe('explanatory-note', () => {
 	});
 
 	it('renders null component', () => {
-		const { container } = render(<ExplanatoryNote />);
+		const { container } = render(<ExplanatoryNote title="title" />);
 		const { container: container2 } = render(<div className="col-md-6" />);
 		expect(container).toContainHTML(container2.innerHTML);
 	});
 
 	it('renders not null component', () => {
-		const { container } = render(<ExplanatoryNote text="text" />);
+		const { container } = render(<ExplanatoryNote title="title" text="text" />);
 		expect(container.innerHTML).not.toBeNull();
 	});
 });

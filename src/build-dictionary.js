@@ -54,6 +54,10 @@ const dictionary = {
 		fr: 'Erreur',
 		en: 'Error',
 	},
+	errorBody: {
+		fr: 'Une erreur est survenue',
+		en: 'An error occured',
+	},
 	// Loadable
 	loadableAuth: {
 		fr: 'Authentification en cours...',

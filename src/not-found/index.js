@@ -7,7 +7,7 @@ export default () => (
 		<PageTitle title={D.notFoundTitle} />
 		<div className="row">
 			<div className="col-md-5" />
-			<Button className="col-md-offset-5" label={D.home} action="/" />
+			<Button label={D.home} action="/" />
 		</div>
 	</div>
 );

@@ -36,11 +36,12 @@ class EditorHTML extends Component {
 			);
 	}
 
-	componentWillReceiveProps({ text }) {
-		if (this.props.smart) return;
-		this.setState({
+	static getDerivedStateFromProps({ text, smart }, state) {
+		if (smart || text === state.text) return null;
+		return {
+			text,
 			editorState: HTMLUtils.editorStateFromHtml(text || ''),
-		});
+		};
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
@@ -53,7 +54,7 @@ class EditorHTML extends Component {
 				ariaLabel={this.props.ariaLabel}
 				editorState={this.state.editorState}
 				id={this.props.id}
-				toolbar={toolbar}
+				toolbar={this.props.toolbar}
 				toolbarClassName="home-toolbar"
 				wrapperClassName="home-wrapper"
 				editorClassName="home-editor"
@@ -68,6 +69,11 @@ EditorHTML.propTypes = {
 	handleChange: PropTypes.func.isRequired,
 	//if smart is set to true, the editor will not react when receiving new props
 	smart: PropTypes.bool,
+	toolbar: PropTypes.object,
+};
+
+EditorHTML.defaultProps = {
+	toolbar,
 };
 
 export default EditorHTML;

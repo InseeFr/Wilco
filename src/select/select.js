@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, ControlLabel, HelpBlock } from 'react-bootstrap';
+import { FormGroup, FormLabel, FormText } from 'react-bootstrap';
 import ReactSelect from 'react-select';
 import './select.scss';
 import D from '../build-dictionary';
@@ -25,7 +25,7 @@ function Select({
 
 	return (
 		<FormGroup controlId={id}>
-			{label && <ControlLabel>{label}</ControlLabel>}{' '}
+			{label && <FormLabel>{label}</FormLabel>}{' '}
 			<ReactSelect
 				value={value}
 				options={options}
@@ -38,7 +38,7 @@ function Select({
 				isDisabled={disabled}
 				aria-label={label || placeholder}
 			/>
-			{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}
+			{helpMsg && <FormText style={{ color: 'red' }}>{helpMsg}</FormText>}
 		</FormGroup>
 	);
 }

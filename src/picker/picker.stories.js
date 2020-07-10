@@ -8,11 +8,11 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 const stories = storiesOf('Picker', module);
 stories.addDecorator(withKnobs);
 
-const routerDecorator = storyFn => <MemoryRouter>{storyFn()}</MemoryRouter>;
+const routerDecorator = (storyFn) => <MemoryRouter>{storyFn()}</MemoryRouter>;
 stories.addDecorator(routerDecorator);
 
-const styleDecorator = storyFn => (
-	<div className="col-md-10 col-md-offset-1">{storyFn()}</div>
+const styleDecorator = (storyFn) => (
+	<div className="col-md-10 justify-content-md-center">{storyFn()}</div>
 );
 stories.addDecorator(styleDecorator);
 

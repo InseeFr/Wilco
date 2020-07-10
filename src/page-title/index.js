@@ -6,12 +6,10 @@ import './page-title.scss';
  *
  * @param {{title:string, subtitle:string?, col: number?, offset: number?, context:string}} props
  */
-function PageTitle({ title, subtitle, col = 10, offset = 1 }) {
+function PageTitle({ title, subtitle, col = 10 }) {
 	return (
-		<div className="row wilco-page-title">
-			<div
-				className={`col-md-${col} wilco-page-title__block col-md-offset-${offset}`}
-			>
+		<div className="row wilco-page-title justify-content-md-center">
+			<div className={`col-md-${col} wilco-page-title__block`}>
 				<h1 className="wilco-page-title__title ">
 					{title}
 					{subtitle && <div>&quot; {subtitle} &quot;</div>}

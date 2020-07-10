@@ -35,10 +35,9 @@ const SearchableList = ({
 	));
 
 	const colSize = col ? `col-md-${col}` : '';
-	const colOffset = colOff ? `col-md-offset-${colOff}` : '';
 
 	return (
-		<div className={`${colSize} ${colOffset}`}>
+		<div className={`${colSize} text-center`}>
 			<div className="row form-group">
 				<div className="col-md-12">
 					<input
@@ -67,7 +66,9 @@ const SearchableList = ({
 					</div>
 				</div>
 			)}
-			<p aria-live="assertive">{nbResults(hits, D)}</p>
+			<p className="text-center" aria-live="assertive">
+				{nbResults(hits, D)}
+			</p>
 			<Pagination itemEls={hitEls} itemsPerPage="10" />
 		</div>
 	);
