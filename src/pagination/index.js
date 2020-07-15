@@ -17,7 +17,7 @@ function checkInvalidPage(targetPage, listSize) {
 export const Pagination = React.memo(
 	({ location: { pathname, search }, itemEls, itemsPerPage }) => {
 		const paginationD = D.pagination || {};
-		const ariaLabel = number => `${paginationD.goTo} ${number}`;
+		const ariaLabel = (number) => `${paginationD.goTo} ${number}`;
 		if (!itemsPerPage) return null;
 
 		const queryParams = queryString.parse(search);
@@ -41,8 +41,8 @@ export const Pagination = React.memo(
 		}
 
 		const renderPageNumbers = pageNumbers
-			.filter(number => number - 3 < currentPage && number + 3 > currentPage)
-			.map(number => {
+			.filter((number) => number - 3 < currentPage && number + 3 > currentPage)
+			.map((number) => {
 				return (
 					<li className={isActivePage(number) ? 'active' : ''} key={number}>
 						<Link
@@ -58,10 +58,10 @@ export const Pagination = React.memo(
 
 		return (
 			<Fragment>
-				<ul className="list-group">{currentItems}</ul>
+				<ul className="list-group text-left">{currentItems}</ul>
 				{pageNumbers.length > 1 && (
 					<div>
-						<ul className={`wilco-pagination`}>
+						<ul className="wilco-pagination">
 							<li>
 								<Link
 									to={`${pathname}?page=1`}

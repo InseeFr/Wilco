@@ -54,6 +54,10 @@ const dictionary = {
 		fr: 'Erreur',
 		en: 'Error',
 	},
+	errorBody: {
+		fr: 'Une erreur est survenue',
+		en: 'An error occured',
+	},
 	// Loadable
 	loadableAuth: {
 		fr: 'Authentification en cours...',
@@ -82,6 +86,10 @@ const dictionary = {
 	home: {
 		fr: 'Accueil',
 		en: 'Home',
+	},
+	notFoundTitle: {
+		fr: 'Page introuvable',
+		en: 'Page not found',
 	},
 	pagination: {
 		goTo: {

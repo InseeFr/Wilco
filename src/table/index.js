@@ -60,9 +60,9 @@ const Table = ({
 	);
 	return (
 		<Fragment>
-			<div className={`${cssClass} wilco-table pagination marginTop`}>
+			<div className={`${cssClass} wilco-table marginTop`}>
 				<ToolkitProvider keyField="id" columns={columns} data={data} search>
-					{props => (
+					{(props) => (
 						<Fragment>
 							{search && (
 								<SearchBar

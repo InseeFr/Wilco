@@ -9,16 +9,16 @@ describe('panel', () => {
 
 	it('returns component title', () => {
 		const { container } = render(<Panel title="title">body</Panel>);
-		expect(container.querySelector('.panel-title').innerHTML).toEqual('title');
+		expect(container.querySelector('.card-title').innerHTML).toEqual('title');
 	});
 
 	it('returns component title (element)', () => {
 		const { container } = render(<Panel title={<div>title</div>}>body</Panel>);
-		expect(container.querySelector('.panel-title div').innerHTML).toBe('title');
+		expect(container.querySelector('.card-title div').innerHTML).toBe('title');
 	});
 
 	it('returns panel body', () => {
 		const { container } = render(<Panel title={<div>title</div>}>body</Panel>);
-		expect(container.querySelector('.panel-body').innerHTML).toBe('body');
+		expect(container.querySelector('.card-body').innerHTML).toBe('body');
 	});
 });

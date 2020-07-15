@@ -4,8 +4,8 @@ import './page-subtitle.scss';
 
 const PageSubtitle = ({ subTitle }) => {
 	return (
-		<div className="row">
-			<div className="col-md-8 text-center col-md-offset-2">
+		<div className="row justify-content-md-center">
+			<div className="col-md-8 text-center">
 				<h3 className="wilco-page-subtitle">{subTitle}</h3>
 			</div>
 		</div>

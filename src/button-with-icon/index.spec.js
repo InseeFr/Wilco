@@ -19,46 +19,30 @@ describe('ExportButton', () => {
 	it('should display the right icon', () => {
 		const { container } = render(<ExportButton label="" action={() => {}} />);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain(
-			'export'
-		);
 	});
 });
 describe('PublishButton', () => {
 	it('should display the right icon', () => {
 		const { container } = render(<PublishButton label="" action={() => {}} />);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain('ok');
 	});
 });
 describe('NewButton', () => {
 	it('should display the right icon', () => {
 		const { container } = render(<NewButton label="" action={() => {}} />);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain('plus');
 	});
 });
 describe('CancelButton', () => {
 	it('should display the right icon', () => {
 		const { container } = render(<CancelButton label="" action={() => {}} />);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain(
-			'floppy-remove'
-		);
 	});
 });
 describe('SaveButton', () => {
 	it('should display the right icon', () => {
 		const { container } = render(<SaveButton label="" action={() => {}} />);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain(
-			'floppy-disk'
-		);
 	});
 });
 describe('DuplicateButton', () => {
@@ -67,9 +51,5 @@ describe('DuplicateButton', () => {
 			<DuplicateButton label="" action={() => {}} />
 		);
 		expect(container.querySelectorAll('button')).toHaveLength(1);
-
-		expect(container.querySelector('button span').className).toContain(
-			'duplicate'
-		);
 	});
 });

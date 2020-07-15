@@ -9,7 +9,7 @@ Visual components
 
 [Storybook](https://inseefr.github.io/Wilco/storybook) is available online.
 
-## Include Wilco in my project
+## Using Wilco into your project
 
 If you want to add the module into your own project, you should first install it via NPM or yarn
 
@@ -22,6 +22,26 @@ Then, you need to include the CSS stylesheet of `bootstrap` and the CSS styleshe
 ```javascript
 import 'bootstrap/dist/css/bootstrap.css';
 import '@inseefr/wilco/dist/index.css';
+```
+
+## How to improve Wilco
+
+If you want to improve Wilco, the best way if to launch Storybook, and have a look to the component you want to improve.
+
+```
+npm run start-storybook
+```
+
+When your changes are finished, but do not want to / cannot publish the library to NPM, the easiest way to include your own version of Wilco into your project (just for testing!) is to copy and paste the generated `dist` folder into the `node_modules` folder of your project.
+
+```
+cp -R ../Wilco/dist ./node_modules/@inseefr/wilco
+```
+
+Inside Wilco, we have a dedicated NPM script to build automatically each time a change is detected.
+
+```
+npm run build:dev
 ```
 
 ## Naming conventions

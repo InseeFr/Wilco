@@ -7,7 +7,9 @@ import { withKnobs, text, number } from '@storybook/addon-knobs';
 const stories = storiesOf('PageTitle', module);
 stories.addDecorator(withKnobs);
 
-const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
+const styleDecorator = (storyFn) => (
+	<div className="col-md-12">{storyFn()}</div>
+);
 stories.addDecorator(styleDecorator);
 
 stories.add('Default', () => <PageTitle title={text('Title', 'Title')} />);
@@ -17,7 +19,6 @@ stories.add('With all props', () => (
 		title={text('Title', 'Title')}
 		subtitle={text('Sub-Title', '')}
 		col={number('Col', 4)}
-		offset={text('Offset', '4')}
 	/>
 ));
 
