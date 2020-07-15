@@ -17,7 +17,19 @@ object-assign
 */
 
 /*!
- * Programatically add the following
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * UAParser.js v0.7.21
+ * Lightweight JavaScript-based User-Agent string parser
+ * https://github.com/faisalman/ua-parser-js
+ *
+ * Copyright © 2012-2019 Faisal Salman <f@faisalman.com>
+ * Licensed under MIT License
  */
 
 /*!
@@ -57,6 +69,15 @@ object-assign
  * Copyright (c) 2014-2017, Jon Schlinkert.
  * Released under the MIT License.
  */
+
+/*!
+ * repeat-string <https://github.com/jonschlinkert/repeat-string>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+/*! @license DOMPurify | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.0.8/LICENSE */
 
 /** @license React v0.18.0
  * scheduler.production.min.js
