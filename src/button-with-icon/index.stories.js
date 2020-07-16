@@ -53,15 +53,16 @@ storiesOf('Button With Icons', module)
 					/>
 				</svg>
 			}
+			action="#"
 		/>
 	))
-	.add('ExportButton', () => <ExportButton />)
-	.add('PublishButton', () => <PublishButton />)
-	.add('NewButton', () => <NewButton />)
-	.add('CancelButton', () => <CancelButton />)
-	.add('SaveButton', () => <SaveButton />)
-	.add('ResetButton', () => <ResetButton />)
-	.add('DuplicateButton', () => <DuplicateButton />)
-	.add('DeleteButton', () => <DeleteButton />)
-	.add('ReturnButton', () => <ReturnButton />)
-	.add('ImportButton', () => <ImportButton />);
+	.add('ExportButton', () => <ExportButton action="#" />)
+	.add('PublishButton', () => <PublishButton action="#" />)
+	.add('NewButton', () => <NewButton action="#" />)
+	.add('CancelButton', () => <CancelButton action="#" />)
+	.add('SaveButton', () => <SaveButton action="#" />)
+	.add('ResetButton', () => <ResetButton action="#" />)
+	.add('DuplicateButton', () => <DuplicateButton action="#" />)
+	.add('DeleteButton', () => <DeleteButton action="#" />)
+	.add('ReturnButton', () => <ReturnButton action="#" />)
+	.add('ImportButton', () => <ImportButton action="#" />);

@@ -21,7 +21,7 @@ const styleDecorator = (storyFn) => (
 );
 stories.addDecorator(styleDecorator);
 
-stories.add('Default', () => <SearchableList items={items} />);
+stories.add('Default', () => <SearchableList items={items} childPath="#" />);
 stories.add('With a custom formatter', () => (
 	<SearchableList
 		items={items}
@@ -33,5 +33,6 @@ stories.add('With a custom formatter', () => (
 				{content}
 			</p>
 		)}
+		childPath="#"
 	/>
 ));
