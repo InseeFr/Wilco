@@ -51,7 +51,6 @@ const Table = ({
 			text,
 			sort,
 			align: align,
-
 			headerStyle: () => {
 				return { width };
 			},

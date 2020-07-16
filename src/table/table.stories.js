@@ -22,7 +22,11 @@ export const rows = [
 
 const data = Array(20)
 	.fill()
-	.map((a, i) => ({ col1: `data ${i + 1} - 1`, col2: `data ${i + 1} - 2` }));
+	.map((a, i) => ({
+		id: i,
+		col1: `data ${i + 1} - 1`,
+		col2: `data ${i + 1} - 2`,
+	}));
 
 const stories = storiesOf('Table', module);
 stories.addDecorator(withKnobs);

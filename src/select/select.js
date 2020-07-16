@@ -57,7 +57,7 @@ Select.propTypes = {
 		PropTypes.object,
 		PropTypes.string,
 	]),
-	placeholder: PropTypes.string.isRequired,
+	placeholder: PropTypes.string,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,

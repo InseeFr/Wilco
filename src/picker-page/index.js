@@ -111,7 +111,7 @@ const Picker = ({
 	));
 
 	//The user has to add at least one item
-	const message = added.length === 0 && labelWarning;
+	const message = added.length === 0 ? labelWarning : '';
 
 	const controls = (
 		<ActionToolbar>

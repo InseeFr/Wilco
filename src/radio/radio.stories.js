@@ -13,5 +13,6 @@ stories.add('Default', () => (
 			{ value: 1, label: 'answer 1' },
 			{ value: 2, label: 'answer 2' },
 		]}
+		onChange={console.log}
 	/>
 ));
