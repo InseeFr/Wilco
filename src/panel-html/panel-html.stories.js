@@ -4,8 +4,7 @@ import PanelHtml from './';
 
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-const html = `
-	<div>
+const html = `<div>
 		<p>PanelHtml body</p>
 		<p>
 			<ul>
@@ -29,20 +28,22 @@ stories.add('Default', () => (
 	</PanelHtml>
 ));
 
+// Hack to keep html unescaped
 stories.add('With html content', () => (
 	<PanelHtml
 		title={text('Title', 'Classification panel title')}
 		context="classifications"
 	>
-		{text('Children', html)}
+		{text('Children', html).replace(/&lt;/g, '<').replace(/&gt;/g, '>')}
 	</PanelHtml>
 ));
 
+// Hack to keep html unescaped
 stories.add('With all props', () => (
 	<PanelHtml
 		title={text('Title', 'PanelHtml title')}
 		context={text('Context', '')}
 	>
-		{text('Children', html)}
+		{text('Children', html).replace(/&lt;/g, '<').replace(/&gt;/g, '>')}
 	</PanelHtml>
 ));

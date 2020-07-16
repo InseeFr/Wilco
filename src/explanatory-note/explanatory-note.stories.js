@@ -31,18 +31,20 @@ stories.add('Default', () => (
 	/>
 ));
 
+// Hack to keep html unescaped
 stories.add('With html content', () => (
 	<ExplanatoryNote
 		title={text('Title', 'Classification panel title')}
-		text={text('Text', html)}
+		text={text('Text', html).replace(/&lt;/g, '<').replace(/&gt;/g, '>')}
 		lang="fr"
 	/>
 ));
 
+// Hack to keep html unescaped
 stories.add('With all props', () => (
 	<ExplanatoryNote
 		title={text('Title', 'ExplanatoryNote title')}
-		text={text('Text', html)}
+		text={text('Text', html).replace(/&lt;/g, '<').replace(/&gt;/g, '>')}
 		lang={text('Lang', 'en')}
 		alone={boolean('Alone', true)}
 	/>
