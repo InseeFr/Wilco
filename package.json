@@ -115,5 +115,8 @@
 		"react-loading": "^2.0.3",
 		"react-router-dom": "^5.1.2",
 		"react-select": "^3.0.4"
+	},
+	"resolutions": {
+		"@babel/preset-env": "7.5.5"
 	}
 }
