@@ -92,6 +92,9 @@
 		"coveragePathIgnorePatterns": [
 			"/node_modules/",
 			"/test/"
+		],
+		"modulePathIgnorePatterns": [
+			"<rootDir>/build/"
 		]
 	},
 	"prettier": {
