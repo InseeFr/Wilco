@@ -3,6 +3,7 @@
 Visual components
 
 [![Build Status](https://travis-ci.org/InseeFr/Wilco.svg?branch=master)](https://travis-ci.org/inseefr/wilco)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=InseeFr_Wilco&metric=coverage)](https://sonarcloud.io/dashboard?id=InseeFr_Wilco)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=InseeFr_Wilco&metric=alert_status)](https://sonarcloud.io/dashboard?id=InseeFr_Wilco)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
