@@ -87,14 +87,9 @@
 		"transform": {
 			"^.+\\.js$": "babel-jest"
 		},
-		"collectCoverage": true,
 		"testResultsProcessor": "jest-sonar-reporter",
 		"coveragePathIgnorePatterns": [
-			"/node_modules/",
-			"/test/"
-		],
-		"modulePathIgnorePatterns": [
-			"<rootDir>/build/"
+			"/node_modules/"
 		]
 	},
 	"prettier": {
