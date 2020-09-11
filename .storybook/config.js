@@ -1,6 +1,7 @@
 import { configure } from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../src/index.scss';
+import './storybook.scss';
 
 const requireAll = (requireContext) =>
 	requireContext.keys().map(requireContext);
