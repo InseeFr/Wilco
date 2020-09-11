@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.navbar-primary {
+	.wilco-menu {
 		.container-fluid {
 			padding-right: 0;
 			padding-left: 0;
@@ -20,14 +20,14 @@
 	}
 }
 @media screen and (min-width: 767px) {
-	.navbar-primary {
+	.wilco-menu {
 		.with-separator::after {
 			@include list-item-separator(white);
 		}
 	}
 }
 
-.navbar-primary {
+.wilco-menu {
 	background: var(--color-3);
 	font-size: 15.3pt;
 	color: #cccfd9;
@@ -41,6 +41,7 @@
 	}
 
 	.navbar-nav {
+		align-items: center;
 		> li {
 			padding: 0 10px;
 			&:hover,

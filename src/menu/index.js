@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './menu.scss';
 
 const WITH_SEPARATOR_CLASS = 'with-separator';
+const defaultHome = { label: D.home, path: '/' };
 
 function getClasses(path, index, paths) {
 	return [
@@ -15,11 +16,11 @@ function getClasses(path, index, paths) {
 		.join(' ')
 		.trim();
 }
-export default ({ paths }) => {
+export default ({ paths, home = defaultHome }) => {
 	const orderedPaths = paths
 		.filter((path) => path.shouldBeDisplayed !== false)
 		.sort((p1, p2) => p1.order - p2.order);
-	const allPaths = [{ label: D.home, path: '/' }, ...orderedPaths].reduce(
+	const allPaths = [home, ...orderedPaths].reduce(
 		(acc, path) => {
 			if (path.alignToRight) {
 				return [[...acc[0]], [...acc[1], path]];
@@ -31,7 +32,7 @@ export default ({ paths }) => {
 	);
 
 	return (
-		<nav className="navbar navbar-expand navbar-light navbar-primary">
+		<nav className="wilco-menu navbar navbar-expand navbar-light navbar-primary">
 			<div className="container-fluid">
 				<div className="collapse navbar-collapse">
 					<ul className="navbar-nav my-2 mr-auto">
@@ -41,7 +42,11 @@ export default ({ paths }) => {
 							return (
 								<li className={classes} key={path.path}>
 									<Link to={path.path} {...path.attrs}>
-										{path.label}
+										{path.image ? (
+											<img src={path.image} alt={path.label} />
+										) : (
+											path.label
+										)}
 									</Link>
 								</li>
 							);
