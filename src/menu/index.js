@@ -16,6 +16,34 @@ function getClasses(path, index, paths) {
 		.join(' ')
 		.trim();
 }
+
+/**
+ * The first parameter you should define is the paths prop. This prop is an array
+ * of menu items. Each item can have multiple propery :
+ * * `label` : the label that will be displayed (or used as an aria-label if we used an image)
+ * * `image` : the path to an image you want to use as a menu item
+ * * `path` : The URL of the target page
+ * * `alignToRight`: The item should be aligned on the left or on the right ?
+ * * `order` : a numeric value in order to define the order of each items.
+ *
+ * const paths = [
+ * 	{label: 'label1', order: 0, path: '/label1'},
+ *  {label: 'label2', order: 1, path: '/label2'},
+ * ]
+ *
+ * return <Menu paths={paths} />
+ *
+ * By default, we will add as a first item a link to the home page. You can also override this property thanks to the home
+ * prop.
+ *
+ * const paths = [
+ * 	{label: 'label1', order: 0, path: '/label1'},
+ *  {label: 'label2', order: 1, path: '/label2'},
+ * ]
+ *
+ * const home = {label: 'Home', path: '/'},
+ * return <Menu paths={paths} home={home}/>
+ */
 export default ({ paths, home = defaultHome }) => {
 	const orderedPaths = paths
 		.filter((path) => path.shouldBeDisplayed !== false)
