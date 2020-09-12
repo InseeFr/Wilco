@@ -47,3 +47,17 @@ npm run build:dev
 ## Naming conventions
 
 - All CSS classes defined in Wilco should be prefixed by `wilco-`
+
+## Theme
+
+Wilco define some colors you can override at any time. All components available in this library will used these colors.
+
+Sor for example, if you want to override the default colors, you should define these following CSS properties in your stylesheet.
+
+```css
+body {
+	--color-1: red;
+	--color-2: green;
+	--color-3: blue;
+}
+```
