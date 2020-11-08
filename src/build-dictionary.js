@@ -2,6 +2,10 @@ import { createDictionary, firstLang, secondLang, getLang } from './i18n';
 import ErrorsD from './errors';
 const dictionary = {
 	...ErrorsD,
+	btnClose: {
+		fr: 'Fermer',
+		en: 'Close',
+	},
 	backToTop: {
 		en: 'Back to Top',
 		fr: 'Haut de page',
