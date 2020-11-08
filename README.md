@@ -14,7 +14,7 @@ Visual components
 If you want to add the module into your own project, you should first install it via NPM or yarn
 
 ```shell
-npm i @inseefr/wilco bootstrap@3.4.1
+npm i @inseefr/wilco bootstrap@4.5.0
 ```
 
 Then, you need to include the CSS stylesheet of `bootstrap` and the CSS stylesheet of this module.
