@@ -25,7 +25,7 @@
 		"coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
 		"lint": "eslint src",
 		"prepublishOnly": "npm run test && npm run build",
-		"pre-push": "yarn run test-coverage && yarn run lint"
+		"pre-push": "yarn run lint && yarn run test-coverage"
 	},
 	"husky": {
 		"hooks": {
