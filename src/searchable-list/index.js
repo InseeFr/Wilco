@@ -16,6 +16,7 @@ const SearchableList = ({
 	autoFocus,
 	searchValue = '',
 	itemFormatter = (content) => content,
+	keyParam = 'id'
 }) => {
 	const [search, handleSearch] = useState(searchValue);
 
@@ -26,7 +27,7 @@ const SearchableList = ({
 	const hits = items.filter(filter(search));
 
 	const hitEls = hits.map((item) => (
-		<li key={item.id} className="list-group-item">
+		<li key={item[keyParam]} className="list-group-item">
 			<Link to={`/${childPath}/${item.id}`}>
 				{itemFormatter(item[label], item)}
 			</Link>
