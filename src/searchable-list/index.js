@@ -12,7 +12,6 @@ const SearchableList = ({
 	placeholder,
 	childPath,
 	col,
-	colOff,
 	label,
 	autoFocus,
 	searchValue = '',
