@@ -86,7 +86,6 @@ SearchableList.propTypes = {
 	searchUrl: PropTypes.string,
 	placeholder: PropTypes.string,
 	col: PropTypes.number,
-	colOff: PropTypes.number,
 	label: PropTypes.string,
 	autoFocus: PropTypes.bool,
 };
