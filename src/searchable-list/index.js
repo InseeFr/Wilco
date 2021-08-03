@@ -15,7 +15,7 @@ const SearchableList = ({
 	label,
 	autoFocus,
 	searchValue = '',
-	itemFormatter = (content, item) => content,
+	itemFormatter = (content) => content,
 }) => {
 	const [search, handleSearch] = useState(searchValue);
 
