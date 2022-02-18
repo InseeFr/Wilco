@@ -21,8 +21,11 @@ export const Pagination = React.memo(
 		if (!itemsPerPage) return null;
 
 		const queryParams = queryString.parse(search);
-		const currentPage = parseInt(queryParams.page || '1', 10);
+		let currentPage = parseInt(queryParams.page || '1', 10);
 
+		if(itemEls.length < (itemsPerPage * (currentPage - 1))){
+			currentPage = 1;
+		}
 		const indexOfLastItem = currentPage * itemsPerPage;
 		const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 		const currentItems = itemEls.slice(indexOfFirstItem, indexOfLastItem);
