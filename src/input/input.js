@@ -1,10 +1,10 @@
 import React from 'react';
 import {
 	FormGroup,
-	ControlLabel,
+	FormLabel,
 	FormControl,
 	InputGroup,
-	HelpBlock,
+	FormText,
 } from 'react-bootstrap';
 import Flag from '../flag';
 
@@ -26,9 +26,9 @@ const Input = ({
 			<div className={`col-md-${col ? col : '12'}`}>
 				<FormGroup controlId={id}>
 					{label && (
-						<ControlLabel>
+						<FormLabel>
 							{label} {flag ? '( ' : null} {flagComponent} {flag ? ' )' : null}
-						</ControlLabel>
+						</FormLabel>
 					)}{' '}
 					{addOn && (
 						<InputGroup>
@@ -51,7 +51,7 @@ const Input = ({
 							disabled={disabled}
 						/>
 					)}
-					{helpMsg && <HelpBlock style={{ color: 'red' }}>{helpMsg}</HelpBlock>}
+					{helpMsg && <FormText style={{ color: 'red' }}>{helpMsg}</FormText>}
 				</FormGroup>
 			</div>
 		</div>
