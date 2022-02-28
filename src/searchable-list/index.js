@@ -12,11 +12,11 @@ const SearchableList = ({
 	placeholder,
 	childPath,
 	col,
-	colOff,
 	label,
 	autoFocus,
 	searchValue = '',
-	itemFormatter = (content, item) => content,
+	itemFormatter = (content) => content,
+	keyParam = 'id'
 }) => {
 	const [search, handleSearch] = useState(searchValue);
 
@@ -27,7 +27,7 @@ const SearchableList = ({
 	const hits = items.filter(filter(search));
 
 	const hitEls = hits.map((item) => (
-		<li key={item.id} className="list-group-item">
+		<li key={item[keyParam]} className="list-group-item">
 			<Link to={`/${childPath}/${item.id}`}>
 				{itemFormatter(item[label], item)}
 			</Link>
@@ -86,7 +86,6 @@ SearchableList.propTypes = {
 	searchUrl: PropTypes.string,
 	placeholder: PropTypes.string,
 	col: PropTypes.number,
-	colOff: PropTypes.number,
 	label: PropTypes.string,
 	autoFocus: PropTypes.bool,
 };
