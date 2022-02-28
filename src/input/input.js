@@ -32,9 +32,10 @@ const Input = ({
 					)}{' '}
 					{addOn && (
 						<InputGroup>
-							<InputGroup.Addon>{addOn}</InputGroup.Addon>
+							<InputGroup.Prepend>
+								<InputGroup.Text>{addOn}</InputGroup.Text>
+							</InputGroup.Prepend>
 							<FormControl
-								componentClass="input"
 								placeholder={placeholder}
 								value={value}
 								onChange={onChange}
@@ -44,7 +45,6 @@ const Input = ({
 					)}
 					{!addOn && (
 						<FormControl
-							componentClass="input"
 							placeholder={placeholder}
 							value={value}
 							onChange={onChange}

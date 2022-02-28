@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+
 import BootstrapTable from 'react-bootstrap-table-next';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
@@ -11,6 +13,24 @@ import './table.scss';
 import D from '../build-dictionary';
 const { SearchBar } = Search;
 
+/**
+const rowParams = [{ dataField: 'total', text: 'Total', width: '100%' }];
+
+const data = [
+	{
+		id: '1',
+		type: 'Sub-total',
+		total: 10,
+	},
+	{
+		id: '2',
+		type: 'Total',
+		total: 100,
+	},
+];
+
+<Table rowParams={rowParams} data={data} />
+ */
 const Table = ({
 	rowParams,
 	data,
@@ -51,7 +71,6 @@ const Table = ({
 			text,
 			sort,
 			align: align,
-
 			headerStyle: () => {
 				return { width };
 			},
@@ -60,9 +79,9 @@ const Table = ({
 	);
 	return (
 		<Fragment>
-			<div className={`${cssClass} wilco-table pagination marginTop`}>
+			<div className={`${cssClass} wilco-table marginTop`}>
 				<ToolkitProvider keyField="id" columns={columns} data={data} search>
-					{props => (
+					{(props) => (
 						<Fragment>
 							{search && (
 								<SearchBar
@@ -86,6 +105,16 @@ const Table = ({
 			</div>
 		</Fragment>
 	);
+};
+
+Table.propTypes = {
+	rowParams: PropTypes.array,
+	data: PropTypes.array,
+	search: PropTypes.bool,
+	pagination: PropTypes.bool,
+	cssClass: PropTypes.string,
+	onRowClick: PropTypes.func,
+	align: PropTypes.string,
 };
 
 Table.defaultProps = {

@@ -2,6 +2,10 @@ import { createDictionary, firstLang, secondLang, getLang } from './i18n';
 import ErrorsD from './errors';
 const dictionary = {
 	...ErrorsD,
+	btnClose: {
+		fr: 'Fermer',
+		en: 'Close',
+	},
 	backToTop: {
 		en: 'Back to Top',
 		fr: 'Haut de page',
@@ -54,6 +58,10 @@ const dictionary = {
 		fr: 'Erreur',
 		en: 'Error',
 	},
+	errorBody: {
+		fr: 'Une erreur est survenue',
+		en: 'An error occured',
+	},
 	// Loadable
 	loadableAuth: {
 		fr: 'Authentification en cours...',
@@ -82,6 +90,10 @@ const dictionary = {
 	home: {
 		fr: 'Accueil',
 		en: 'Home',
+	},
+	notFoundTitle: {
+		fr: 'Page introuvable',
+		en: 'Page not found',
 	},
 	pagination: {
 		goTo: {

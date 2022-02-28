@@ -16,7 +16,7 @@ const Picker = ({ items: propsItems, onChange, panelTitle }) => {
 		setItems(propsItems);
 	}, [propsItems]);
 
-	const moveItem = id => {
+	const moveItem = (id) => {
 		const newItems = items.reduce((acc, item) => {
 			const { id: itemId, isAdded } = item;
 			return [...acc, { ...item, isAdded: itemId === id ? !isAdded : isAdded }];
@@ -67,7 +67,7 @@ const Picker = ({ items: propsItems, onChange, panelTitle }) => {
 			<div className="col-md-6 text-center">
 				<input
 					value={searchLabel}
-					onChange={e => setSearchLabel(e.target.value)}
+					onChange={(e) => setSearchLabel(e.target.value)}
 					type="text"
 					placeholder={D.searchLabelPlaceholder}
 					className="form-control"

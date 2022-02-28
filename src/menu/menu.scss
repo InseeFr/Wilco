@@ -1,15 +1,15 @@
 @mixin list-item-separator($color) {
 	content: '';
-	height: 60%;
+	height: 90%;
 	width: 1px;
-	position: absolute;
-	right: 0;
-	top: 20%;
+	position: relative;
+	right: -0.5em;
 	background-color: $color;
+	display: inline-block;
 }
 
 @media screen and (max-width: 767px) {
-	.navbar-primary {
+	.wilco-menu {
 		.container-fluid {
 			padding-right: 0;
 			padding-left: 0;
@@ -20,14 +20,14 @@
 	}
 }
 @media screen and (min-width: 767px) {
-	.navbar-primary {
+	.wilco-menu {
 		.with-separator::after {
 			@include list-item-separator(white);
 		}
 	}
 }
 
-.navbar-primary {
+.wilco-menu {
 	background: var(--color-3);
 	font-size: 15.3pt;
 	color: #cccfd9;
@@ -41,24 +41,14 @@
 	}
 
 	.navbar-nav {
+		align-items: center;
 		> li {
 			padding: 0 10px;
 			&:hover,
 			&.active {
-				background: var(--color-2);
-				margin-left: -1px;
-
 				> a,
 				> button {
-					color: red;
-					background: none;
-					&:focus,
-					&:hover {
-						background: none;
-					}
-				}
-				&::after {
-					@include list-item-separator(transparent);
+					text-decoration: underline;
 				}
 			}
 			a {

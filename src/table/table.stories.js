@@ -11,7 +11,7 @@ export const rows = [
 		text: 'Col1',
 		width: '70%',
 		isKey: true,
-		dataFormat: d => d.toUpperCase(),
+		dataFormat: (d) => d.toUpperCase(),
 	},
 	{
 		dataField: 'col2',
@@ -22,15 +22,19 @@ export const rows = [
 
 const data = Array(20)
 	.fill()
-	.map((a, i) => ({ col1: `data ${i + 1} - 1`, col2: `data ${i + 1} - 2` }));
+	.map((a, i) => ({
+		id: i,
+		col1: `data ${i + 1} - 1`,
+		col2: `data ${i + 1} - 2`,
+	}));
 
 const stories = storiesOf('Table', module);
 stories.addDecorator(withKnobs);
 
-const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
+const styleDecorator = (storyFn) => (
+	<div className="col-md-12">{storyFn()}</div>
+);
 stories.addDecorator(styleDecorator);
-
-stories.add('Default', () => <Table rowParams={rows} data={data} />);
 
 stories.add('With all props', () => (
 	<Table

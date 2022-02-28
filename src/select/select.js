@@ -35,7 +35,7 @@ function Select({
 				noResultsText={D.noResult}
 				isMulti={multi}
 				isClearable={isClearable}
-				disabled={disabled}
+				isDisabled={disabled}
 				aria-label={label || placeholder}
 			/>
 			{helpMsg && <FormText style={{ color: 'red' }}>{helpMsg}</FormText>}
@@ -57,7 +57,7 @@ Select.propTypes = {
 		PropTypes.object,
 		PropTypes.string,
 	]),
-	placeholder: PropTypes.string.isRequired,
+	placeholder: PropTypes.string,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,

@@ -11,6 +11,11 @@
 	justify-content: space-between;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	flex-wrap: wrap;
+
+	> div {
+		flex-grow: 1;
+	}
 
 	.empty-center {
 		flex-grow: 1;

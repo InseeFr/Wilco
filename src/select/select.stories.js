@@ -19,7 +19,16 @@ const options = [
 ];
 
 stories.add('Default', () => (
-	<Select label="label" value={options[0]} options={options} />
+	<Select label="label" options={options} onChange={console.log} />
+));
+
+stories.add('With one value', () => (
+	<Select
+		label="label"
+		value={options[0]}
+		options={options}
+		onChange={console.log}
+	/>
 ));
 
 stories.add('With multiple values', () => (
@@ -28,6 +37,7 @@ stories.add('With multiple values', () => (
 		value={[options[0], options[1]]}
 		multi={true}
 		options={options}
+		onChange={console.log}
 	/>
 ));
 
@@ -37,5 +47,16 @@ stories.add('Clearable select', () => (
 		value={options[0]}
 		options={options}
 		unclearable={false}
+		onChange={console.log}
+	/>
+));
+
+stories.add('Disabled select', () => (
+	<Select
+		label="label"
+		value={options[0]}
+		options={options}
+		disabled={true}
+		onChange={console.log}
 	/>
 ));

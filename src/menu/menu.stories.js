@@ -4,8 +4,8 @@ import { MemoryRouter } from 'react-router-dom';
 import Menu from '.';
 const stories = storiesOf('Menu', module);
 
-const routerDecorator = storyFn => <MemoryRouter>{storyFn()}</MemoryRouter>;
-const styleDecorator = storyFn => (
+const routerDecorator = (storyFn) => <MemoryRouter>{storyFn()}</MemoryRouter>;
+const styleDecorator = (storyFn) => (
 	<div className="col-md-12" style={{ marginTop: '5%' }}>
 		{storyFn()}
 	</div>
@@ -40,6 +40,19 @@ stories.add('With links on the right and the left sides', () => {
 		{ label: 'Link2', order: 2, path: 'link2', alignToRight: true },
 	];
 	return <Menu paths={paths} />;
+});
+
+stories.add('With icons', () => {
+	const home = {
+		path: '/',
+		label: 'Home',
+		image: 'https://cdn.iconscout.com/icon/free/png-256/random-10-432139.png',
+	};
+	const paths = [
+		{ label: 'Link1', order: 0, path: 'link1', alignToRight: false },
+		{ label: 'Link2', order: 2, path: 'link2', alignToRight: true },
+	];
+	return <Menu paths={paths} home={home} />;
 });
 stories.add('With an active link', () => {
 	const paths = [

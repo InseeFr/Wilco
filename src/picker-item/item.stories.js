@@ -9,7 +9,9 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 const stories = storiesOf('Picker-Item', module);
 stories.addDecorator(withKnobs);
 
-const styleDecorator = storyFn => <div className="col-md-12">{storyFn()}</div>;
+const styleDecorator = (storyFn) => (
+	<div className="col-md-12">{storyFn()}</div>
+);
 stories.addDecorator(styleDecorator);
 
 stories.add('Add', () => (
