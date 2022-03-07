@@ -15,7 +15,7 @@ describe('input', () => {
 		);
 	});
 
-	it('should display a FormLabel component with the label', () => {
+	it('should display a ControlLabel component with the label', () => {
 		const { container } = render(
 			<Input
 				id="id"
@@ -25,9 +25,9 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.querySelectorAll('.form-label')).toHaveLength(1);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(1);
 	});
-	it('should display a FormLabel component with the label and flag', () => {
+	it('should display a ControlLabel component with the label and flag', () => {
 		const { container } = render(
 			<Input
 				id="id"
@@ -38,10 +38,10 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.querySelectorAll('.form-label')).toHaveLength(1);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(1);
 		expect(container.querySelectorAll('.img-flag')).toHaveLength(1);
 	});
-	it('should not display a FormLabel component ', () => {
+	it('should not display a ControlLabel component ', () => {
 		const { container } = render(
 			<Input
 				id="id"
@@ -50,6 +50,6 @@ describe('input', () => {
 				onChange={() => 'onChange'}
 			/>
 		);
-		expect(container.querySelectorAll('.form-label')).toHaveLength(0);
+		expect(container.querySelectorAll('.control-label')).toHaveLength(0);
 	});
 });

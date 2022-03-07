@@ -18,7 +18,7 @@ describe('select', () => {
 			/>
 		);
 	});
-	it('should display a FormText if the helpMsg is defined', () => {
+	it('should display a HelpBlock if the helpMsg is defined', () => {
 		const { container } = render(
 			<Select
 				value="value"
@@ -28,7 +28,7 @@ describe('select', () => {
 				helpMsg="helpMsg"
 			/>
 		);
-		expect(container.querySelectorAll('.form-text')).toHaveLength(1);
+		expect(container.querySelectorAll('.help-block')).toHaveLength(1);
 	});
 	it('should not display a FormText if the helpMsg is undefined', () => {
 		const { container } = render(
