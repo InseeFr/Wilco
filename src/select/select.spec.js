@@ -30,7 +30,7 @@ describe('select', () => {
 		);
 		expect(container.querySelectorAll('.help-block')).toHaveLength(1);
 	});
-	it('should not display a HelpBlock if the helpMsg is undefined', () => {
+	it('should not display a FormText if the helpMsg is undefined', () => {
 		const { container } = render(
 			<Select
 				value="value"
@@ -39,6 +39,6 @@ describe('select', () => {
 				onChange={() => ''}
 			/>
 		);
-		expect(container.querySelectorAll('.help-block')).toHaveLength(0);
+		expect(container.querySelectorAll('.form-text')).toHaveLength(0);
 	});
 });
