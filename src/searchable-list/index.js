@@ -12,11 +12,12 @@ const SearchableList = ({
 	placeholder,
 	childPath,
 	col,
+	offset,
 	label,
 	autoFocus,
 	searchValue = '',
 	itemFormatter = (content) => content,
-	keyParam = 'id'
+	keyParam = 'id',
 }) => {
 	const [search, handleSearch] = useState(searchValue);
 
@@ -35,9 +36,10 @@ const SearchableList = ({
 	));
 
 	const colSize = col ? `col-md-${col}` : '';
+	const colOffset = offset ? `offset-md-${offset}` : '';
 
 	return (
-		<div className={`${colSize} text-center`}>
+		<div className={`${colSize} ${colOffset} text-center`}>
 			<div className="row form-group">
 				<div className="col-md-12">
 					<input
@@ -86,6 +88,7 @@ SearchableList.propTypes = {
 	searchUrl: PropTypes.string,
 	placeholder: PropTypes.string,
 	col: PropTypes.number,
+	offset: PropTypes.number,
 	label: PropTypes.string,
 	autoFocus: PropTypes.bool,
 };

@@ -34,5 +34,7 @@ stories.add('With a custom formatter', () => (
 			</p>
 		)}
 		childPath="#"
+		col={6}
+		offset={3}
 	/>
 ));
