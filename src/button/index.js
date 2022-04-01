@@ -4,6 +4,8 @@ import React from 'react';
 
 import './button.scss';
 
+const DEFAULT_CLASSES = [];
+
 export const Link = ({ to, disabled, children, className, ...rest }) => {
 	if (disabled) {
 		return <span className={className + ' disabled'}>{children}</span>;
@@ -23,27 +25,36 @@ const Button = ({
 	offset,
 	children,
 	wrapper = true,
+	classes = DEFAULT_CLASSES,
+	externalLink,
 }) => {
 	const content = label ? label : children;
+	const className = `btn wilco-btn btn-lg col-md-12 ${classes.join(' ')}`;
 	let button;
 	if (typeof action === 'string') {
-		button = (
-			<Link
-				className="btn wilco-btn btn-lg col-md-12"
-				to={action}
-				disabled={disabled}
-			>
-				{content}
-			</Link>
-		);
+		if (externalLink) {
+			button = (
+				<a
+					className={className}
+					href={action}
+					rel="noopener noreferrer"
+					target="_blank"
+					disabled={disabled}
+				>
+					{content}
+				</a>
+			);
+		} else {
+			button = (
+				<Link className={className} to={action} disabled={disabled}>
+					{content}
+				</Link>
+			);
+		}
 	} else {
 		//if action is a function, it means a handler was passed in instead of an URL
 		button = (
-			<button
-				className="btn wilco-btn btn-lg col-md-12"
-				onClick={action}
-				disabled={disabled}
-			>
+			<button className={className} onClick={action} disabled={disabled}>
 				{content}
 			</button>
 		);
@@ -52,12 +63,12 @@ const Button = ({
 		return button;
 	}
 
-	const classes = [`col-md-${col}`];
+	const containerClasses = [`col-md-${col}`];
 	if (offset) {
-		classes.push(`col-md-offset-${offset}`);
+		containerClasses.push(`col-md-offset-${offset}`);
 	}
 
-	return <div className={classes.join(' ')}>{button}</div>;
+	return <div className={containerClasses.join(' ')}>{button}</div>;
 };
 
 Button.propTypes = {

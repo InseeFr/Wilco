@@ -34,3 +34,15 @@ stories.add('Disabled Link', () => (
 		</Button>
 	</MemoryRouter>
 ));
+
+stories.add('External link', () => (
+	<MemoryRouter>
+		<Button
+			action="https://www.insee.fr"
+			externalLink
+			classes={['custom-btn-class']}
+		>
+			Click me
+		</Button>
+	</MemoryRouter>
+));
