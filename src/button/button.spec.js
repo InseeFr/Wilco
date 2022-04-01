@@ -21,7 +21,7 @@ describe('button', () => {
 
 		expect(container.innerHTML).toEqual(
 			expect.stringContaining(
-				'<a class="btn wilco-btn btn-lg col-md-12" href="/home">myButton</a>'
+				'<div class="col-md-2"><a class="btn wilco-btn btn-lg col-md-12 " href="/home">myButton</a></div>'
 			)
 		);
 	});
