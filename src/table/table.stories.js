@@ -32,6 +32,23 @@ stories.addDecorator(styleDecorator);
 
 stories.add('Default', () => <Table rowParams={rows} data={data} />);
 
+stories.add('With Custom Pagination', () => (
+	<Table
+		rowParams={rows}
+		data={data}
+		pagination={[
+			{
+				text: '10',
+				value: 10,
+			},
+			{
+				text: '20',
+				value: 20,
+			}
+		]}
+	/>
+));
+
 stories.add('With all props', () => (
 	<Table
 		rowParams={rows}
