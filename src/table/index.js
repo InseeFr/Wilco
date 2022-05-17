@@ -11,6 +11,17 @@ import './table.scss';
 import D from '../build-dictionary';
 const { SearchBar } = Search;
 
+const defaultSizePerPageListOption = [
+	{
+		text: '5',
+		value: 5,
+	},
+	{
+		text: '10',
+		value: 10,
+	}
+];
+
 const Table = ({
 	rowParams,
 	data,
@@ -22,22 +33,16 @@ const Table = ({
 }) => {
 	const plugins = {};
 	if (pagination) {
+		const optionOption = [
+			...(Array.isArray(pagination) ? pagination : defaultSizePerPageListOption),
+			{
+				text: D.allTitle,
+				value: data.length,
+			}
+		]
 		plugins.pagination = paginationFactory({
 			totalSize: data.length,
-			sizePerPageList: [
-				{
-					text: '5',
-					value: 5,
-				},
-				{
-					text: '10',
-					value: 10,
-				},
-				{
-					text: D.allTitle,
-					value: data.length,
-				},
-			],
+			sizePerPageList: optionOption
 		});
 	}
 
